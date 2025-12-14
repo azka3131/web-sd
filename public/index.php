@@ -4,7 +4,7 @@ require_once "../routes/web.php";
 
 // Ambil path URL
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$base = "";
+$base = "/kp-sd2-dukuhbenda/public";
 
 if (substr($path, 0, strlen($base)) === $base) {
     $path = substr($path, strlen($base));
