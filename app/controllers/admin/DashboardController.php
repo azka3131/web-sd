@@ -1,9 +1,17 @@
 <?php
 namespace Admin;
+
 class DashboardController {
     public function index() {
-        // sebaiknya include view dashboard jika sudah dibuat:
-        // require_once __DIR__ . '/../../../app/views/admin/dashboard.php';
-        echo "<h1>Selamat Datang di Dashboard Admin</h1>";
+        session_start();
+        
+        // Cek login
+        if (!isset($_SESSION['admin'])) {
+            header("Location: /kp-sd2-dukuhbenda/public/admin/login");
+            exit;
+        }
+
+        // Hapus tanda komentar (//) agar view terpanggil
+        require_once __DIR__ . '/../../../app/views/admin/dashboard.php';
     }
 }
