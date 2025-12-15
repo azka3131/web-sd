@@ -1,7 +1,6 @@
 <?php include 'header.php'; ?>
 
 <?php
-// Data Dummy / Fallback
 $foto_def = "/kp-sd2-dukuhbenda/public/assets/img/default-user.png";
 $foto_kepsek = $foto_def;
 $nama_kepsek = "Kepala Sekolah";
@@ -21,7 +20,7 @@ if (isset($kepsek) && !empty($kepsek)) {
 <div class="hero-slider-wrapper">
     <div class="slide-item active" style="background-image: url('/kp-sd2-dukuhbenda/public/assets/img/slider1.jpg');">
         <div class="slide-overlay">
-            <img src="/kp-sd2-dukuhbenda/public/assets/img/logo.jpg" alt="Logo Sekolah" class="slide-logo-img">
+            <img src="/kp-sd2-dukuhbenda/public/assets/img/logo_tel.png" alt="Logo Sekolah" class="slide-logo-img">
             <div class="slide-text">
                 <h1>SD NEGERI DUKUHBENDA 02</h1>
                 <p>Membentuk Generasi Cerdas, Berkarakter, dan Berakhlak Mulia di Era Digital.</p>
@@ -74,7 +73,7 @@ if (isset($kepsek) && !empty($kepsek)) {
     </div>
 </section>
 
-<<section class="stats-section reveal">
+<section class="stats-section reveal">
     <div class="wave-top">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
@@ -85,22 +84,22 @@ if (isset($kepsek) && !empty($kepsek)) {
         <div class="stats-grid">
             <div class="stat-item">
                 <i class="fas fa-user-graduate stat-icon"></i>
-                <span class="stat-number" data-target="<?= $info['jumlah_siswa']; ?>">0</span>
+                <span class="stat-number" data-target="<?= isset($info['jumlah_siswa']) ? $info['jumlah_siswa'] : 0; ?>">0</span>
                 <span class="stat-label">Siswa</span>
             </div>
             <div class="stat-item">
                 <i class="fas fa-chalkboard-teacher stat-icon"></i>
-                <span class="stat-number" data-target="<?= $info['jumlah_guru']; ?>">0</span>
+                <span class="stat-number" data-target="<?= isset($info['jumlah_guru']) ? $info['jumlah_guru'] : 0; ?>">0</span>
                 <span class="stat-label">Guru & Staf</span>
             </div>
             <div class="stat-item">
                 <i class="fas fa-school stat-icon"></i>
-                <span class="stat-number" data-target="<?= $info['jumlah_rombel']; ?>">0</span>
+                <span class="stat-number" data-target="<?= isset($info['jumlah_rombel']) ? $info['jumlah_rombel'] : 0; ?>">0</span>
                 <span class="stat-label">Rombel</span>
             </div>
             <div class="stat-item">
                 <i class="fas fa-trophy stat-icon"></i>
-                <span class="stat-number" data-target="<?= $info['jumlah_prestasi']; ?>">0</span>
+                <span class="stat-number" data-target="<?= isset($info['jumlah_prestasi']) ? $info['jumlah_prestasi'] : 0; ?>">0</span>
                 <span class="stat-label">Prestasi</span>
             </div>
         </div>
@@ -210,12 +209,68 @@ if (isset($kepsek) && !empty($kepsek)) {
     </div>
 </section>
 
+<style>
+@media (max-width: 900px) {
+    .sambutan-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .sambutan-img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .sambutan-img img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .sambutan-text {
+        width: 100%;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .berita-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-form-side, .contact-info-side {
+        width: 100%;
+        padding: 0;
+    }
+
+    .form-row-inputs {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-text h1 { font-size: 1.8em; }
+    .slide-text p { font-size: 0.9em; }
+    .stats-grid { grid-template-columns: 1fr; }
+}
+</style>
+
 <?php include 'footer.php'; ?>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         
-        // 1. Slider Otomatis
         const slides = document.querySelectorAll('.slide-item');
         let currentSlide = 0;
         const slideInterval = 3000;
@@ -229,7 +284,6 @@ if (isset($kepsek) && !empty($kepsek)) {
         }
         if (slides.length > 0) setInterval(nextSlide, slideInterval);
 
-        // 2. Animasi Scroll (Reveal)
         const reveals = document.querySelectorAll('.reveal');
         const windowHeight = window.innerHeight;
         
@@ -243,9 +297,8 @@ if (isset($kepsek) && !empty($kepsek)) {
             });
         }
         window.addEventListener('scroll', checkReveal);
-        checkReveal(); // Trigger sekali saat load
+        checkReveal();
 
-        // 3. Animasi Angka Statistik
         const counters = document.querySelectorAll('.stat-number');
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
@@ -262,7 +315,6 @@ if (isset($kepsek) && !empty($kepsek)) {
             updateCount();
         });
 
-        // 4. Notifikasi Pesan Terkirim
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('pesan') === 'sukses') {
             alert("✅ Pesan berhasil dikirim!\nTerima kasih telah menghubungi kami.");
