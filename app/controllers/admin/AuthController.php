@@ -4,6 +4,8 @@ namespace Admin;
 
 // Pastikan path ini benar sesuai struktur folder Anda
 require_once __DIR__ . '/../../../config/database.php';
+// PENTING: Load config.php agar BASEURL tersedia
+require_once __DIR__ . '/../../../app/config/config.php';
 
 class AuthController
 {
@@ -13,7 +15,8 @@ class AuthController
         session_start();
         // Jika sudah login, lempar langsung ke dashboard
         if (isset($_SESSION['admin'])) {
-            header("Location: /kp-sd2-dukuhbenda/public/admin/dashboard");
+            // FIX: Gunakan BASEURL untuk redirect
+            header("Location: " . BASEURL . "/admin/dashboard");
             exit;
         }
         require_once __DIR__ . '/../../../app/views/admin/login.php';
@@ -56,12 +59,12 @@ class AuthController
                 'role'     => $user['role'] ?? 'admin'
             ];
 
-            header("Location: /kp-sd2-dukuhbenda/public/admin/dashboard");
+            // FIX: Gunakan BASEURL untuk redirect sukses
+            header("Location: " . BASEURL . "/admin/dashboard");
             exit;
         } else {
-            // Agar user tidak bingung, kita redirect balik ke login dengan alert (opsional)
-            // Atau echo sederhana seperti sebelumnya:
-            echo "<script>alert('Username atau Password salah!'); window.location.href='/kp-sd2-dukuhbenda/public/admin/login';</script>";
+            // FIX: Gunakan BASEURL untuk redirect error
+            echo "<script>alert('Username atau Password salah!'); window.location.href='" . BASEURL . "/admin/login';</script>";
         }
     }
 
@@ -69,7 +72,8 @@ class AuthController
     {
         session_start();
         session_destroy();
-        header("Location: /kp-sd2-dukuhbenda/public/admin/login");
+        // FIX: Gunakan BASEURL untuk redirect logout
+        header("Location: " . BASEURL . "/admin/login");
         exit;
     }
 }

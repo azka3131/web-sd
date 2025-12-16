@@ -14,7 +14,7 @@
                 
                 <div class="img-wrapper">
                     <?php if(!empty($b['gambar'])): ?>
-                        <img src="/kp-sd2-dukuhbenda/public/assets/img/berita/<?= $b['gambar']; ?>" alt="<?= $b['judul']; ?>">
+                        <img src="<?= BASEURL ?>/assets/img/berita/<?= $b['gambar']; ?>" alt="<?= $b['judul']; ?>">
                     <?php else: ?>
                         <img src="https://via.placeholder.com/400x250?text=Berita" alt="No Image">
                     <?php endif; ?>
@@ -29,7 +29,7 @@
                     <h3 class="card-title"><?= $b['judul']; ?></h3>
                     <p class="card-desc"><?= substr(strip_tags($b['isi']), 0, 90) . "..."; ?></p>
                     
-                    <a href="/kp-sd2-dukuhbenda/public/berita/detail?id=<?= $b['id']; ?>" class="btn-read">
+                    <a href="<?= BASEURL ?>/berita/detail?id=<?= $b['id']; ?>" class="btn-read">
                         Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>

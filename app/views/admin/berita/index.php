@@ -163,9 +163,9 @@
         <div class="page-header">
             <div class="header-title">
                 <h1>Kelola Berita</h1>
-                <p><a href="/kp-sd2-dukuhbenda/public/admin/dashboard"><i class="fas fa-arrow-left"></i> Kembali ke Dashboard</a></p>
+                <p><a href="<?= BASEURL ?>/admin/dashboard"><i class="fas fa-arrow-left"></i> Kembali ke Dashboard</a></p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/berita/tambah" class="btn-add">
+            <a href="<?= BASEURL ?>/admin/berita/tambah" class="btn-add">
                 <i class="fas fa-plus"></i> Tambah Berita Baru
             </a>
         </div>
@@ -194,7 +194,7 @@
                             <td><?= $no++; ?></td>
                             <td>
                                 <?php if($row['gambar']): ?>
-                                    <img src="/kp-sd2-dukuhbenda/public/assets/img/berita/<?= $row['gambar']; ?>" class="thumb-img" alt="Thumb">
+                                    <img src="<?= BASEURL ?>/assets/img/berita/<?= $row['gambar']; ?>" class="thumb-img" alt="Thumb">
                                 <?php else: ?>
                                     <span style="font-size:12px; color:#ccc;">No Image</span>
                                 <?php endif; ?>
@@ -203,10 +203,10 @@
                             <td><span style="background:#eef4fc; color:#4FB6C7; padding:4px 10px; border-radius:15px; font-size:12px; font-weight:bold;"><?= date('d M Y', strtotime($row['tanggal'])); ?></span></td>
                             <td>
                                 <div class="action-btn-group">
-                                    <a href="/kp-sd2-dukuhbenda/public/admin/berita/edit?id=<?= $row['id']; ?>" class="btn-action btn-edit">
+                                    <a href="<?= BASEURL ?>/admin/berita/edit?id=<?= $row['id']; ?>" class="btn-action btn-edit">
                                         <i class="fas fa-edit"></i> Edit
                                     </a>
-                                    <a href="/kp-sd2-dukuhbenda/public/admin/berita/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Yakin ingin menghapus berita ini?')">
+                                    <a href="<?= BASEURL ?>/admin/berita/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Yakin ingin menghapus berita ini?')">
                                         <i class="fas fa-trash"></i> Hapus
                                     </a>
                                 </div>

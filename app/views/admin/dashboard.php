@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Cek jika belum login, tendang ke halaman login
 if (!isset($_SESSION['admin'])) {
-    header("Location: /kp-sd2-dukuhbenda/public/admin/login");
+    header("Location: " . BASEURL . "/admin/login"); // <-- FIX DI SINI
     exit;
 }
 ?>
@@ -170,8 +170,7 @@ if (!isset($_SESSION['admin'])) {
             <h1>Dashboard Admin</h1>
             <p>Selamat datang kembali, <b><?= htmlspecialchars($_SESSION['admin']['username'] ?? 'Admin'); ?></b>!</p>
         </div>
-        <a href="/kp-sd2-dukuhbenda/public/admin/logout" class="btn-logout">
-            <i class="fas fa-sign-out-alt"></i> Logout
+        <a href="<?= BASEURL ?>/admin/logout" class="btn-logout"> <i class="fas fa-sign-out-alt"></i> Logout
         </a>
     </div>
 
@@ -183,7 +182,7 @@ if (!isset($_SESSION['admin'])) {
                 <h3>Info Sekolah</h3>
                 <p>Update jumlah siswa, guru, rombel, dan prestasi.</p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/info" class="btn-enter">Masuk</a>
+            <a href="<?= BASEURL ?>/admin/info" class="btn-enter">Masuk</a>
         </div>
 
         <div class="menu-card">
@@ -192,7 +191,7 @@ if (!isset($_SESSION['admin'])) {
                 <h3>Kelola Guru</h3>
                 <p>Tambah, edit, atau hapus data guru dan staf pengajar.</p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/guru" class="btn-enter">Masuk</a>
+            <a href="<?= BASEURL ?>/admin/guru" class="btn-enter">Masuk</a>
         </div>
 
         <div class="menu-card">
@@ -201,7 +200,7 @@ if (!isset($_SESSION['admin'])) {
                 <h3>Struktur Organisasi</h3>
                 <p>Atur susunan Kepala Sekolah, Komite, dan jajaran staf.</p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/struktur" class="btn-enter">Masuk</a>
+            <a href="<?= BASEURL ?>/admin/struktur" class="btn-enter">Masuk</a>
         </div>
 
         <div class="menu-card">
@@ -210,7 +209,7 @@ if (!isset($_SESSION['admin'])) {
                 <h3>Kelola Berita</h3>
                 <p>Posting artikel, pengumuman, dan informasi terbaru sekolah.</p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/berita" class="btn-enter">Masuk</a>
+            <a href="<?= BASEURL ?>/admin/berita" class="btn-enter">Masuk</a>
         </div>
 
         <div class="menu-card">
@@ -219,7 +218,7 @@ if (!isset($_SESSION['admin'])) {
                 <h3>Kelola Galeri</h3>
                 <p>Upload foto kegiatan dan dokumentasi acara sekolah.</p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/galeri" class="btn-enter">Masuk</a>
+            <a href="<?= BASEURL ?>/admin/galeri" class="btn-enter">Masuk</a>
         </div>
 
         <div class="menu-card">
@@ -228,7 +227,25 @@ if (!isset($_SESSION['admin'])) {
                 <h3>Kelola Fasilitas</h3>
                 <p>Data sarana dan prasarana penunjang kegiatan belajar.</p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/fasilitas" class="btn-enter">Masuk</a>
+            <a href="<?= BASEURL ?>/admin/fasilitas" class="btn-enter">Masuk</a>
+        </div>
+
+        <div class="menu-card">
+            <div>
+                <div class="icon-wrapper"><i class="fas fa-trophy"></i></div>
+                <h3>Kelola Prestasi</h3>
+                <p>Update data kejuaraan dan pencapaian siswa.</p>
+            </div>
+            <a href="<?= BASEURL ?>/admin/prestasi" class="btn-enter">Masuk</a>
+        </div>
+
+        <div class="menu-card">
+            <div>
+                <div class="icon-wrapper"><i class="fas fa-bullhorn"></i></div>
+                <h3>Kelola PPDB</h3>
+                <p>Update brosur dan info pendaftaran siswa baru.</p>
+            </div>
+            <a href="<?= BASEURL ?>/admin/ppdb" class="btn-enter">Masuk</a>
         </div>
 
     </div>

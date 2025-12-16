@@ -12,9 +12,9 @@
         <?php foreach ($data as $g) : ?>
             <div class="guru-card">
                 <?php if (!empty($g['foto'])): ?>
-                    <img src="/kp-sd2-dukuhbenda/public/assets/img/guru/<?= $g['foto']; ?>" alt="<?= $g['nama']; ?>">
+                    <img src="<link href="<?= BASEURL ?>/assets/img/guru/<?= $g['foto']; ?>" alt="<?= $g['nama']; ?>">
                 <?php else: ?>
-                    <img src="/kp-sd2-dukuhbenda/public/assets/img/default-user.png" alt="Default">
+                    <img src="<link href="<?= BASEURL ?>/assets/img/default-user.png" alt="Default">
                 <?php endif; ?>
 
                 <h3><?= $g['nama']; ?></h3>

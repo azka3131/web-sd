@@ -21,7 +21,7 @@
                     <div class="fasilitas-img">
                         <div class="img-frame">
                             <?php if(!empty($row['gambar'])): ?>
-                                <img src="/kp-sd2-dukuhbenda/public/assets/img/fasilitas/<?= $row['gambar']; ?>" alt="<?= $row['nama']; ?>">
+                                <img src="<link href="<?= BASEURL ?>/assets/img/fasilitas/<?= $row['gambar']; ?>" alt="<?= $row['nama']; ?>">
                             <?php else: ?>
                                 <img src="https://via.placeholder.com/600x400?text=No+Image" alt="Placeholder">
                             <?php endif; ?>

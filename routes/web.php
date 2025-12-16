@@ -66,5 +66,27 @@ $routes = [
     // ADMIN INFO SEKOLAH (STATISTIK)
     '/admin/info' => 'Admin\InfoController@index',
     '/admin/info/update' => 'Admin\InfoController@update',
+
+    // ... (Kode sebelumnya)
+
+    // === ROUTES PUBLIK BARU ===
+    '/ppdb'     => 'PpdbController@index',
+    '/prestasi' => 'PrestasiController@index',
+
+// ... (Di bagian Admin, tambahkan ini)
+
+    // === ROUTES ADMIN PPDB ===
+    '/admin/ppdb'        => 'Admin\PpdbController@index',
+    '/admin/ppdb/update' => 'Admin\PpdbController@update',
+
+    // === ROUTES ADMIN PRESTASI ===
+    '/admin/prestasi'        => 'Admin\PrestasiController@index',
+    '/admin/prestasi/tambah' => 'Admin\PrestasiController@create',
+    '/admin/prestasi/simpan' => 'Admin\PrestasiController@store',
+    '/admin/prestasi/edit'   => 'Admin\PrestasiController@edit',
+    '/admin/prestasi/update' => 'Admin\PrestasiController@update',
+    '/admin/prestasi/hapus'  => 'Admin\PrestasiController@delete',
+
+// ... (Kode sesudahnya)
 ];
 

@@ -25,7 +25,7 @@
                 <div class="gallery-card">
                     <div class="gallery-thumb">
                         <?php if(!empty($foto['filename'])): ?>
-                            <img src="/kp-sd2-dukuhbenda/public/assets/img/galeri/<?= $foto['filename']; ?>" alt="<?= $foto['judul']; ?>">
+                            <img src="<link href="<?= BASEURL ?>/assets/img/galeri/<?= $foto['filename']; ?>" alt="<?= $foto['judul']; ?>">
                         <?php else: ?>
                             <img src="https://via.placeholder.com/800x600?text=No+Image" alt="Placeholder">
                         <?php endif; ?>
