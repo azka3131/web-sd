@@ -5,18 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SD Negeri 2 Dukuhbenda</title>
-    <link rel="stylesheet" href="/kp-sd2-dukuhbenda/public/assets/css/style.css?v=<?= time(); ?>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SD Negeri 2 Dukuhbenda</title>
     
     <link rel="shortcut icon" href="/kp-sd2-dukuhbenda/public/assets/img/logo_tel.png" type="image/x-icon">
 
     <link rel="stylesheet" href="/kp-sd2-dukuhbenda/public/assets/css/style.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <style>
+        /* CSS Tambahan Khusus Navbar */
+        a.nav-ppdb-highlight {
+            color: #ffc107 !important;
+            font-weight: 800;
+            text-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
+        a.nav-ppdb-highlight:hover {
+            color: #fff !important;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .navbar .nav-links {
+            align-items: center;
+        }
+        
+        @media (max-width: 900px) {
+            a.nav-ppdb-highlight {
+                background-color: rgba(255, 193, 7, 0.1);
+                padding: 10px;
+                border-radius: 5px;
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -45,7 +72,7 @@
     <header>
         <div class="container navbar">
             <div class="logo-area">
-                <img src="/kp-sd2-dukuhbenda/public/assets/img/logo.jpg" alt="Logo">
+                <img src="/kp-sd2-dukuhbenda/public/assets/img/logo_tel.png" alt="Logo">
                 <div class="logo-text">
                     <h2>SDN DUKUHBENDA 02</h2>
                     <small>Bumijawa, Kab. Tegal</small>
@@ -78,19 +105,13 @@
                         </div>
                     </div>
 
-                    <div class="dropdown-mobile-wrap">
-                        <a href="#" class="dropbtn" onclick="toggleDropdown(this, event)">
-                            <span><i class="fas fa-layer-group"></i> Sumber Daya</span>
-                            <i class="fas fa-chevron-down arrow-icon"></i>
-                        </a>
-                        <div class="dropdown-content">
-                            <a href="/kp-sd2-dukuhbenda/public/guru">Guru & Staf</a>
-                            <a href="/kp-sd2-dukuhbenda/public/fasilitas">Fasilitas</a>
-                        </div>
-                    </div>
+                    <a href="/kp-sd2-dukuhbenda/public/guru"><i class="fas fa-chalkboard-teacher"></i> Guru & Staf</a>
 
                     <a href="/kp-sd2-dukuhbenda/public/berita"><i class="fas fa-newspaper"></i> Berita</a>
-                    <a href="/kp-sd2-dukuhbenda/public/galeri"><i class="fas fa-images"></i> Galeri</a>
+
+                    <a href="/kp-sd2-dukuhbenda/public/ppdb" class="nav-ppdb-highlight">
+                        <i class="fas fa-star"></i> PPDB ONLINE
+                    </a>
                 </div>
 
                 <div class="nav-buttons">
@@ -101,7 +122,6 @@
     </header>
 
     <script>
-        // Fungsi Buka Tutup Menu Utama
         function toggleMenu() {
             const nav = document.getElementById('nav-menu');
             const overlay = document.querySelector('.menu-overlay');
@@ -109,18 +129,11 @@
             overlay.classList.toggle('active');
         }
 
-        // Fungsi Buka Tutup Dropdown di Mobile
         function toggleDropdown(element, event) {
-            // Cek jika layar <= 900px (Mobile)
             if (window.innerWidth <= 900) {
-                event.preventDefault(); // Mencegah link pindah halaman
+                event.preventDefault(); 
                 const parent = element.parentElement;
-                
-                // Toggle class 'active' pada parent wrapper
                 parent.classList.toggle('active');
             }
         }
     </script>
-
-    <div class="container">
-        <main>

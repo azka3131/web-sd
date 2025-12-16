@@ -1,11 +1,15 @@
 <?php include 'header.php'; ?>
 
+<div class="container">
+    <main>
+
 <?php
+// Default data (Dummy jika database kosong)
 $foto_def = "/kp-sd2-dukuhbenda/public/assets/img/default-user.png";
 $foto_kepsek = $foto_def;
 $nama_kepsek = "Kepala Sekolah";
 $jabatan_kepsek = "Kepala Sekolah";
-$sambutan_kepsek = "Assalamu'alaikum Warahmatullahi Wabarakatuh.\n\nSelamat datang di website resmi SD Negeri Dukuhbenda 02. Kami berkomitmen mencetak generasi cerdas dan berakhlak mulia.";
+$sambutan_kepsek = "Assalamu'alaikum Warahmatullahi Wabarakatuh.\n\nSelamat datang di website resmi SD Negeri Dukuhbenda 02.";
 
 if (isset($kepsek) && !empty($kepsek)) {
     if (!empty($kepsek['foto'])) {
@@ -35,14 +39,6 @@ if (isset($kepsek) && !empty($kepsek)) {
             </div>
         </div>
     </div>
-    <div class="slide-item" style="background-image: url('/kp-sd2-dukuhbenda/public/assets/img/slider3.jpg');">
-        <div class="slide-overlay">
-            <div class="slide-text">
-                <h1>Guru Berkompeten</h1>
-                <p>Dididik oleh tenaga pengajar profesional, berpengalaman, dan penuh dedikasi.</p>
-            </div>
-        </div>
-    </div>
     
     <div class="wave-divider">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -55,7 +51,7 @@ if (isset($kepsek) && !empty($kepsek)) {
     </div>
 </div>
 
-<section id="sambutan" class="sambutan-section reveal">
+<section id="sambutan" class="sambutan-section reveal" style="padding-top: 50px;">
     <div class="container">
         <div class="sambutan-card">
             <div class="sambutan-img">
@@ -112,6 +108,50 @@ if (isset($kepsek) && !empty($kepsek)) {
     </div>
 </section>
 
+<section id="akses-cepat" class="quick-menu-section reveal">
+    <div class="container">
+        <div class="section-header" style="margin-bottom: 40px;">
+            <h2>JELAJAHI SEKOLAH</h2>
+            <div class="line-bar"></div>
+        </div>
+        
+        <div class="quick-menu-grid three-cols-centered">
+            <a href="/kp-sd2-dukuhbenda/public/galeri" class="quick-card card-galeri">
+                <div class="card-content-wrapper">
+                    <div class="icon-circle">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Galeri Foto</h3>
+                    <p>Dokumentasi kegiatan siswa</p>
+                    <div class="btn-action">Lihat Galeri <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="/kp-sd2-dukuhbenda/public/prestasi" class="quick-card card-prestasi">
+                <div class="card-content-wrapper">
+                    <div class="icon-circle">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Prestasi</h3>
+                    <p>Daftar kejuaraan sekolah</p>
+                    <div class="btn-action">Lihat Prestasi <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="/kp-sd2-dukuhbenda/public/fasilitas" class="quick-card card-fasilitas">
+                <div class="card-content-wrapper">
+                    <div class="icon-circle">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Fasilitas</h3>
+                    <p>Sarana penunjang belajar</p>
+                    <div class="btn-action">Lihat Fasilitas <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
 <section class="home-berita reveal">
     <div class="container">
         <div class="section-header">
@@ -159,12 +199,10 @@ if (isset($kepsek) && !empty($kepsek)) {
         <div class="contact-wrapper">
             <div class="contact-form-side">
                 <h2 class="contact-title">Hubungi Kami</h2>
+                <p style="margin-bottom: 20px; color: #666;">Silakan pilih metode di bawah ini:</p>
                 
                 <form action="https://formsubmit.co/azkahehe22@gmail.com" method="POST">
                     <input type="hidden" name="_next" value="http://localhost/kp-sd2-dukuhbenda/public/?pesan=sukses">
-                    <input type="hidden" name="_subject" value="Pesan Baru dari Website Sekolah">
-                    <input type="hidden" name="_captcha" value="false">
-
                     <div class="form-row-inputs">
                         <div class="form-group">
                             <label>Nama Lengkap</label>
@@ -180,29 +218,31 @@ if (isset($kepsek) && !empty($kepsek)) {
                         <textarea name="pesan" rows="4" class="input-line" placeholder="Tulis pesan Anda..." required></textarea>
                     </div>
                     
-                    <p class="form-note">*NB: Anda tidak perlu login untuk mengirim pesan.</p>
-                    
                     <button type="submit" class="btn-teal" style="width: 100%;">Kirim Pesan</button>
                 </form>
+
+                <div class="contact-divider"><span>ATAU</span></div>
+
+                <div class="wa-wrapper" style="margin-top: 25px;">
+                    <a href="https://wa.me/6287830153654?text=Halo%20Admin%20SD%20Negeri%202%20Dukuhbenda" target="_blank" class="btn-wa-fancy">
+                        <div class="wa-icon-box">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <span>Hubungi via WhatsApp</span>
+                    </a>
+                </div>
+
             </div>
 
             <div class="contact-info-side">
                 <h3 class="info-school-name">SD Negeri 2 Dukuhbenda</h3>
                 <div class="info-details">
-                    <p><i class="fas fa-map-marker-alt"></i> Jl. Raya, Siketi Tengah, Dukuh Benda, Kec. Bumijawa</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Raya, Siketi Tengah, Dukuh Benda</p>
                     <p><i class="fas fa-phone-alt"></i> (0283) 123456</p>
                     <p><i class="fas fa-envelope"></i> dukuhbenda02@gmail.com</p>
                 </div>
                 <div class="map-container-clean">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://maps.google.com/maps?q=SDN+DUKUHBENDA+02,+Bumijawa&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                    </iframe>
+                    <iframe width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" src="https://maps.google.com/maps?q=SDN+DUKUHBENDA+02,+Bumijawa&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
                 </div>
             </div>
         </div>
@@ -210,59 +250,177 @@ if (isset($kepsek) && !empty($kepsek)) {
 </section>
 
 <style>
-@media (max-width: 900px) {
-    .sambutan-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px;
-    }
-    
-    .sambutan-img {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 25px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .sambutan-img img {
-        width: 180px;
-        height: 180px;
-    }
-
-    .sambutan-text {
-        width: 100%;
-    }
-
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .berita-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-wrapper {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .contact-form-side, .contact-info-side {
-        width: 100%;
-        padding: 0;
-    }
-
-    .form-row-inputs {
-        flex-direction: column;
-        gap: 0;
-    }
+/* --- SECTION 3 KOTAK (JELAJAHI SEKOLAH) --- */
+.quick-menu-section {
+    padding: 60px 0;
+    position: relative;
+    z-index: 10;
 }
 
-@media (max-width: 480px) {
-    .slide-text h1 { font-size: 1.8em; }
-    .slide-text p { font-size: 0.9em; }
-    .stats-grid { grid-template-columns: 1fr; }
+.quick-menu-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.three-cols-centered {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Base Card Style */
+.quick-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #444;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efek membal halus */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* HOVER EFFECT: Card Lift Up */
+.quick-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    border-color: transparent;
+}
+
+/* Icon Circle Styling */
+.quick-card .icon-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #fff;
+    transition: transform 0.5s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* HOVER EFFECT: Icon Membesar & Muter */
+.quick-card:hover .icon-circle {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Typography */
+.quick-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.quick-card p {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Tombol Kecil di dalam Card */
+.btn-action {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 50px;
+    background: #f4f6f9;
+    color: #555;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.quick-card:hover .btn-action {
+    color: #fff;
+    padding-left: 35px; /* Geser dikit saat hover */
+}
+
+/* --- WARNA SPESIFIK TIAP KARTU --- */
+
+/* 1. Galeri (Orange) */
+.card-galeri .icon-circle { background: linear-gradient(135deg, #FF9966, #FF5E62); box-shadow: 0 10px 20px rgba(255, 94, 98, 0.3); }
+.card-galeri:hover .btn-action { background: linear-gradient(135deg, #FF9966, #FF5E62); box-shadow: 0 5px 15px rgba(255, 94, 98, 0.4); }
+
+/* 2. Prestasi (Gold) */
+.card-prestasi .icon-circle { background: linear-gradient(135deg, #F2994A, #F2C94C); box-shadow: 0 10px 20px rgba(242, 201, 76, 0.3); }
+.card-prestasi:hover .btn-action { background: linear-gradient(135deg, #F2994A, #F2C94C); box-shadow: 0 5px 15px rgba(242, 201, 76, 0.4); }
+
+/* 3. Fasilitas (Hijau) */
+.card-fasilitas .icon-circle { background: linear-gradient(135deg, #11998e, #38ef7d); box-shadow: 0 10px 20px rgba(56, 239, 125, 0.3); }
+.card-fasilitas:hover .btn-action { background: linear-gradient(135deg, #11998e, #38ef7d); box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4); }
+
+
+/* --- TOMBOL WHATSAPP CANTIK --- */
+.wa-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-wa-fancy {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    color: #fff !important;
+    text-decoration: none;
+    padding: 12px 30px 12px 12px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.wa-icon-box {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #25D366;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.btn-wa-fancy:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn-wa-fancy:hover .wa-icon-box {
+    transform: rotate(360deg);
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+    .three-cols-centered {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+    
+    .quick-card {
+        padding: 30px;
+        margin-bottom: 15px;
+    }
+    
+    .btn-wa-fancy {
+        width: 100%;
+        justify-content: center;
+    }
 }
 </style>
 
@@ -271,10 +429,10 @@ if (isset($kepsek) && !empty($kepsek)) {
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         
+        // Slider Logic
         const slides = document.querySelectorAll('.slide-item');
         let currentSlide = 0;
         const slideInterval = 3000;
-
         function nextSlide() {
             if (slides.length > 0) {
                 slides[currentSlide].classList.remove('active');
@@ -284,9 +442,9 @@ if (isset($kepsek) && !empty($kepsek)) {
         }
         if (slides.length > 0) setInterval(nextSlide, slideInterval);
 
+        // Scroll Reveal
         const reveals = document.querySelectorAll('.reveal');
         const windowHeight = window.innerHeight;
-        
         function checkReveal() {
             reveals.forEach(reveal => {
                 const elementTop = reveal.getBoundingClientRect().top;
@@ -299,6 +457,7 @@ if (isset($kepsek) && !empty($kepsek)) {
         window.addEventListener('scroll', checkReveal);
         checkReveal();
 
+        // Counter Animation
         const counters = document.querySelectorAll('.stat-number');
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
@@ -315,6 +474,7 @@ if (isset($kepsek) && !empty($kepsek)) {
             updateCount();
         });
 
+        // Form Success Alert
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('pesan') === 'sukses') {
             alert("✅ Pesan berhasil dikirim!\nTerima kasih telah menghubungi kami.");
@@ -323,3 +483,8 @@ if (isset($kepsek) && !empty($kepsek)) {
         }
     });
 </script>
+
+    </main>
+</div>
+</body>
+</html>
