@@ -4,13 +4,7 @@
     <main>
 
 <?php
-// Default data (Dummy jika database kosong)
-$foto_def = "/kp-sd2-dukuhbenda/public/assets/img/default-user.png";
-$foto_kepsek = $foto_def;
-$nama_kepsek = "Kepala Sekolah";
-$jabatan_kepsek = "Kepala Sekolah";
-$sambutan_kepsek = "Assalamu'alaikum Warahmatullahi Wabarakatuh.\n\nSelamat datang di website resmi SD Negeri Dukuhbenda 02.";
-
+// Cek data kepsek
 if (isset($kepsek) && !empty($kepsek)) {
     if (!empty($kepsek['foto'])) {
         $foto_kepsek = "/kp-sd2-dukuhbenda/public/assets/img/guru/" . $kepsek['foto'];
@@ -22,16 +16,16 @@ if (isset($kepsek) && !empty($kepsek)) {
 ?>
 
 <div class="hero-slider-wrapper">
-    <div class="slide-item active" style="background-image: url('/kp-sd2-dukuhbenda/public/assets/img/slider1.jpg');">
+    <div class="slide-item active" style="background-image: url('<?= BASEURL ?>/assets/img/slider1.jpg');">
         <div class="slide-overlay">
-            <img src="/kp-sd2-dukuhbenda/public/assets/img/logo_tel.png" alt="Logo Sekolah" class="slide-logo-img">
+            <img src="<?= BASEURL ?>/assets/img/logo_tel.png" alt="Logo Sekolah" class="slide-logo-img">
             <div class="slide-text">
                 <h1>SD NEGERI DUKUHBENDA 02</h1>
                 <p>Membentuk Generasi Cerdas, Berkarakter, dan Berakhlak Mulia di Era Digital.</p>
             </div>
         </div>
     </div>
-    <div class="slide-item" style="background-image: url('/kp-sd2-dukuhbenda/public/assets/img/slider2.jpg');">
+    <div class="slide-item" style="background-image: url('<?= BASEURL ?>/assets/img/slider2.jpg');">
         <div class="slide-overlay">
             <div class="slide-text">
                 <h1>Fasilitas Lengkap</h1>
@@ -39,7 +33,14 @@ if (isset($kepsek) && !empty($kepsek)) {
             </div>
         </div>
     </div>
-    
+    <div class="slide-item" style="background-image: url('<?= BASEURL ?>/assets/img/slider3.jpg');">
+        <div class="slide-overlay">
+            <div class="slide-text">
+                <h1>Guru Berkompeten</h1>
+                <p>Dididik oleh tenaga pengajar profesional, berpengalaman, dan penuh dedikasi.</p>
+            </div>
+        </div>
+    </div>
     <div class="wave-divider">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
@@ -116,7 +117,7 @@ if (isset($kepsek) && !empty($kepsek)) {
         </div>
         
         <div class="quick-menu-grid three-cols-centered">
-            <a href="/kp-sd2-dukuhbenda/public/galeri" class="quick-card card-galeri">
+            <a href="<?= BASEURL ?>/galeri" class="quick-card card-galeri">
                 <div class="card-content-wrapper">
                     <div class="icon-circle">
                         <i class="fas fa-images"></i>
@@ -127,7 +128,7 @@ if (isset($kepsek) && !empty($kepsek)) {
                 </div>
             </a>
 
-            <a href="/kp-sd2-dukuhbenda/public/prestasi" class="quick-card card-prestasi">
+            <a href="<?= BASEURL ?>/prestasi" class="quick-card card-prestasi">
                 <div class="card-content-wrapper">
                     <div class="icon-circle">
                         <i class="fas fa-trophy"></i>
@@ -138,7 +139,7 @@ if (isset($kepsek) && !empty($kepsek)) {
                 </div>
             </a>
 
-            <a href="/kp-sd2-dukuhbenda/public/fasilitas" class="quick-card card-fasilitas">
+            <a href="<?= BASEURL ?>/fasilitas" class="quick-card card-fasilitas">
                 <div class="card-content-wrapper">
                     <div class="icon-circle">
                         <i class="fas fa-building"></i>
@@ -173,11 +174,11 @@ if (isset($kepsek) && !empty($kepsek)) {
                         </div>
                         <div class="berita-content">
                             <h3>
-                                <a href="/kp-sd2-dukuhbenda/public/berita/detail?id=<?= $b['id']; ?>">
+                                <a href="<?= BASEURL ?>/berita/detail?id=<?= $b['id']; ?>">
                                     <?= substr($b['judul'], 0, 60); ?>...
                                 </a>
                             </h3>
-                            <a href="/kp-sd2-dukuhbenda/public/berita/detail?id=<?= $b['id']; ?>" class="read-more">Baca Selengkapnya →</a>
+                            <a href="<?= BASEURL ?>/berita/detail?id=<?= $b['id']; ?>" class="read-more">Baca Selengkapnya →</a>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -189,7 +190,7 @@ if (isset($kepsek) && !empty($kepsek)) {
         </div>
 
         <div style="text-align: center; margin-top: 50px;">
-            <a href="/kp-sd2-dukuhbenda/public/berita" class="btn-teal">Lihat Semua Berita</a>
+            <a href="<?= BASEURL ?>/berita" class="btn-teal">Lihat Semua Berita</a>
         </div>
     </div>
 </section>
@@ -202,7 +203,7 @@ if (isset($kepsek) && !empty($kepsek)) {
                 <p style="margin-bottom: 20px; color: #666;">Silakan pilih metode di bawah ini:</p>
                 
                 <form action="https://formsubmit.co/azkahehe22@gmail.com" method="POST">
-                    <input type="hidden" name="_next" value="http://localhost/kp-sd2-dukuhbenda/public/?pesan=sukses">
+                    <input type="hidden" name="_next" value="http://localhost<?= BASEURL ?>/?pesan=sukses">
                     <div class="form-row-inputs">
                         <div class="form-group">
                             <label>Nama Lengkap</label>
@@ -221,8 +222,6 @@ if (isset($kepsek) && !empty($kepsek)) {
                     <button type="submit" class="btn-teal" style="width: 100%;">Kirim Pesan</button>
                 </form>
 
-                <div class="contact-divider"><span>ATAU</span></div>
-
                 <div class="wa-wrapper" style="margin-top: 25px;">
                     <a href="https://wa.me/6287830153654?text=Halo%20Admin%20SD%20Negeri%202%20Dukuhbenda" target="_blank" class="btn-wa-fancy">
                         <div class="wa-icon-box">
@@ -238,7 +237,7 @@ if (isset($kepsek) && !empty($kepsek)) {
                 <h3 class="info-school-name">SD Negeri 2 Dukuhbenda</h3>
                 <div class="info-details">
                     <p><i class="fas fa-map-marker-alt"></i> Jl. Raya, Siketi Tengah, Dukuh Benda</p>
-                    <p><i class="fas fa-phone-alt"></i> (0283) 123456</p>
+                    <p><i class="fas fa-phone-alt"></i> 0878-3015-3654</p>
                     <p><i class="fas fa-envelope"></i> dukuhbenda02@gmail.com</p>
                 </div>
                 <div class="map-container-clean">
@@ -250,186 +249,155 @@ if (isset($kepsek) && !empty($kepsek)) {
 </section>
 
 <style>
-/* --- SECTION 3 KOTAK (JELAJAHI SEKOLAH) --- */
+/* --- FOTO KEPALA SEKOLAH (BIAR GANTENG & TIDAK GEPENG) --- */
+
+.sambutan-section {
+    padding: 60px 0;
+}
+
+.sambutan-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05); /* Shadow lembut */
+}
+
+.sambutan-img {
+    flex-shrink: 0; /* Agar foto tidak tergencet teks */
+}
+
+/* Tampilan Desktop (Layar Besar) */
+.sambutan-img img {
+    width: 280px;           /* Lebar fix */
+    height: 350px;          /* Tinggi fix (Portrait) */
+    object-fit: cover;      /* KUNCI ANTI GEPENG: Foto menyesuaikan bingkai */
+    object-position: top center; /* Fokus ke wajah (atas) */
+    border-radius: 15px;    /* Sudut melengkung */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 5px solid #fff; /* Frame putih biar elegan */
+    transition: transform 0.3s ease;
+}
+
+.sambutan-img img:hover {
+    transform: scale(1.02) rotate(1deg); /* Efek goyang dikit pas hover */
+}
+
+.sambutan-text {
+    flex-grow: 1;
+}
+
+/* --- TAMPILAN MOBILE (HP) - REVISI BIAR BAGUS --- */
+@media (max-width: 900px) {
+    .sambutan-card {
+        flex-direction: column; /* Susun ke bawah (Foto atas, Teks bawah) */
+        text-align: center;     /* Teks rata tengah */
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .sambutan-img {
+        margin: 0 auto;         /* Posisi foto di tengah */
+        width: 100%;            /* Container full width */
+        display: flex;
+        justify-content: center;
+    }
+
+    .sambutan-img img {
+        width: 200px;           /* Ukuran di HP lebih kecil tapi proporsional */
+        height: 250px;          /* Tetap Portrait 4:5 */
+        max-width: none;        /* Reset batasan lama */
+        border-radius: 20px 5px 20px 5px; /* Variasi sudut unik */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    
+    .sambutan-text h3 { font-size: 1.2rem; }
+    .sambutan-text h4 { font-size: 1.5rem; margin-top: 5px; }
+}
+
+
+/* --- CSS LAINNYA (TETAP SEPERTI SEBELUMNYA) --- */
+
+/* SECTION 3 KOTAK */
 .quick-menu-section {
     padding: 60px 0;
     position: relative;
     z-index: 10;
 }
-
-.quick-menu-grid {
-    display: grid;
-    gap: 30px;
-}
-
-.three-cols-centered {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1100px;
-    margin: 0 auto;
-}
+.quick-menu-grid { display: grid; gap: 30px; }
+.three-cols-centered { grid-template-columns: repeat(3, 1fr); max-width: 1100px; margin: 0 auto; }
 
 /* Base Card Style */
 .quick-card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 40px 20px;
-    text-align: center;
-    text-decoration: none;
-    color: #444;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #f0f0f0;
+    background: #fff; border-radius: 20px; padding: 40px 20px;
+    text-align: center; text-decoration: none; color: #444;
+    position: relative; overflow: hidden; border: 1px solid #f0f0f0;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efek membal halus */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex; flex-direction: column; justify-content: center;
 }
-
-/* HOVER EFFECT: Card Lift Up */
-.quick-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-    border-color: transparent;
-}
+.quick-card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); border-color: transparent; }
 
 /* Icon Circle Styling */
 .quick-card .icon-circle {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    color: #fff;
-    transition: transform 0.5s ease;
+    width: 80px; height: 80px; margin: 0 auto 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; color: #fff; transition: transform 0.5s ease;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+.quick-card:hover .icon-circle { transform: scale(1.1) rotate(10deg); }
 
-/* HOVER EFFECT: Icon Membesar & Muter */
-.quick-card:hover .icon-circle {
-    transform: scale(1.1) rotate(10deg);
-}
-
-/* Typography */
-.quick-card h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
-
-.quick-card p {
-    font-size: 0.95rem;
-    color: #888;
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-/* Tombol Kecil di dalam Card */
+/* Typography & Button */
+.quick-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50; }
+.quick-card p { font-size: 0.95rem; color: #888; margin-bottom: 25px; line-height: 1.6; }
 .btn-action {
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 50px;
-    background: #f4f6f9;
-    color: #555;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: 0.3s;
+    display: inline-block; padding: 10px 25px; border-radius: 50px;
+    background: #f4f6f9; color: #555; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
 }
+.quick-card:hover .btn-action { color: #fff; padding-left: 35px; }
 
-.quick-card:hover .btn-action {
-    color: #fff;
-    padding-left: 35px; /* Geser dikit saat hover */
-}
-
-/* --- WARNA SPESIFIK TIAP KARTU --- */
-
-/* 1. Galeri (Orange) */
+/* Warna Kartu */
 .card-galeri .icon-circle { background: linear-gradient(135deg, #FF9966, #FF5E62); box-shadow: 0 10px 20px rgba(255, 94, 98, 0.3); }
 .card-galeri:hover .btn-action { background: linear-gradient(135deg, #FF9966, #FF5E62); box-shadow: 0 5px 15px rgba(255, 94, 98, 0.4); }
 
-/* 2. Prestasi (Gold) */
 .card-prestasi .icon-circle { background: linear-gradient(135deg, #F2994A, #F2C94C); box-shadow: 0 10px 20px rgba(242, 201, 76, 0.3); }
 .card-prestasi:hover .btn-action { background: linear-gradient(135deg, #F2994A, #F2C94C); box-shadow: 0 5px 15px rgba(242, 201, 76, 0.4); }
 
-/* 3. Fasilitas (Hijau) */
 .card-fasilitas .icon-circle { background: linear-gradient(135deg, #11998e, #38ef7d); box-shadow: 0 10px 20px rgba(56, 239, 125, 0.3); }
 .card-fasilitas:hover .btn-action { background: linear-gradient(135deg, #11998e, #38ef7d); box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4); }
 
-
-/* --- TOMBOL WHATSAPP CANTIK --- */
-.wa-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
+/* Tombol WA */
+.wa-wrapper { display: flex; justify-content: center; }
 .btn-wa-fancy {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
+    display: inline-flex; align-items: center; gap: 15px;
     background: linear-gradient(45deg, #25D366, #128C7E);
-    color: #fff !important;
-    text-decoration: none;
-    padding: 12px 30px 12px 12px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
+    color: #fff !important; text-decoration: none;
+    padding: 12px 30px 12px 12px; border-radius: 50px;
+    font-weight: 700; font-size: 1rem;
     box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.2);
 }
-
 .wa-icon-box {
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #25D366;
-    font-size: 20px;
-    transition: 0.3s;
+    width: 40px; height: 40px; background: #fff; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #25D366; font-size: 20px; transition: 0.3s;
 }
+.btn-wa-fancy:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5); filter: brightness(1.1); }
+.btn-wa-fancy:hover .wa-icon-box { transform: rotate(360deg); }
 
-.btn-wa-fancy:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
-    filter: brightness(1.1);
-}
-
-.btn-wa-fancy:hover .wa-icon-box {
-    transform: rotate(360deg);
-}
-
-/* Responsif */
+/* Responsif Mobile General */
 @media (max-width: 900px) {
-    .three-cols-centered {
-        grid-template-columns: 1fr;
-        padding: 0 20px;
-    }
-    
-    .quick-card {
-        padding: 30px;
-        margin-bottom: 15px;
-    }
-    
-    .btn-wa-fancy {
-        width: 100%;
-        justify-content: center;
-    }
+    .three-cols-centered { grid-template-columns: 1fr; padding: 0 20px; }
+    .quick-card { padding: 30px; margin-bottom: 15px; }
+    .btn-wa-fancy { width: 100%; justify-content: center; }
 }
 </style>
 
-<?php include 'footer.php'; ?>
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        
-        // Slider Logic
+        // Slider
         const slides = document.querySelectorAll('.slide-item');
         let currentSlide = 0;
         const slideInterval = 3000;
@@ -474,7 +442,7 @@ if (isset($kepsek) && !empty($kepsek)) {
             updateCount();
         });
 
-        // Form Success Alert
+        // Form Alert
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('pesan') === 'sukses') {
             alert("✅ Pesan berhasil dikirim!\nTerima kasih telah menghubungi kami.");
@@ -484,7 +452,4 @@ if (isset($kepsek) && !empty($kepsek)) {
     });
 </script>
 
-    </main>
-</div>
-</body>
-</html>
+<?php include 'footer.php'; ?>

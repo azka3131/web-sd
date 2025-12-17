@@ -1,4 +1,17 @@
+# .htaccess Final untuk Shared Hosting (ByetHost)
+
+# Aktifkan Modul Rewrite
 RewriteEngine On
+
+# Tentukan BASEURL (gunakan jika RewriteBase / tidak berfungsi)
+# RewriteBase /
+
+# Abaikan Assets yang ada di folder assets
+RewriteRule ^assets/ - [L]
+
+# Abaikan request jika file atau direktori sudah ada (ini yang melindungi assets)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite sisanya ke index.php
 RewriteRule ^(.*)$ index.php [QSA,L]

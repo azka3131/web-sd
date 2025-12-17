@@ -23,7 +23,7 @@
 <div class="admin-container">
     <h1>Kelola Info Statistik</h1>
 
-    <form action="/kp-sd2-dukuhbenda/public/admin/info/update" method="POST">
+    <form action="<?= BASEURL ?>/admin/info/update" method="POST">
         <div class="form-group">
             <label><i class="fas fa-user-graduate"></i> Jumlah Siswa</label>
             <input type="number" name="siswa" value="<?= $data['jumlah_siswa']; ?>" required>
@@ -47,7 +47,7 @@
         <button type="submit" class="btn-save">Simpan Perubahan</button>
     </form>
 
-    <a href="/kp-sd2-dukuhbenda/public/admin/dashboard" class="back-link">&larr; Kembali ke Dashboard</a>
+    <a href="<?= BASEURL ?>/admin/dashboard" class="back-link">&larr; Kembali ke Dashboard</a>
 </div>
 
 </body>

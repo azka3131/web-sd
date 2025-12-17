@@ -44,9 +44,9 @@
         <div class="page-header">
             <div class="header-title">
                 <h1>Kelola Galeri Sekolah</h1>
-                <p><a href="/kp-sd2-dukuhbenda/public/admin/dashboard"><i class="fas fa-arrow-left"></i> Kembali ke Dashboard</a></p>
+                <p><a href="<?= BASEURL ?>/admin/dashboard"><i class="fas fa-arrow-left"></i> Kembali ke Dashboard</a></p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/galeri/tambah" class="btn-add">
+            <a href="<?= BASEURL ?>/admin/galeri/tambah" class="btn-add">
                 <i class="fas fa-camera"></i> Upload Foto Baru
             </a>
         </div>
@@ -71,7 +71,7 @@
                             <td><?= $no++; ?></td>
                             <td>
                                 <?php if(!empty($row['filename'])): ?>
-                                    <img src="/kp-sd2-dukuhbenda/public/assets/img/galeri/<?= $row['filename']; ?>" class="thumb-img" alt="Thumb">
+                                    <img src="<?= BASEURL ?>/assets/img/galeri/<?= $row['filename']; ?>" class="thumb-img" alt="Thumb">
                                 <?php else: ?>
                                     <span style="font-size:12px; color:#ccc;">No Image</span>
                                 <?php endif; ?>
@@ -82,8 +82,8 @@
                             </td>
                             <td>
                                 <div class="action-btn-group">
-                                    <a href="/kp-sd2-dukuhbenda/public/admin/galeri/edit?id=<?= $row['id']; ?>" class="btn-action btn-edit"><i class="fas fa-edit"></i> Edit</a>
-                                    <a href="/kp-sd2-dukuhbenda/public/admin/galeri/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Hapus foto ini?')"><i class="fas fa-trash"></i> Hapus</a>
+                                    <a href="<?= BASEURL ?>/admin/galeri/edit?id=<?= $row['id']; ?>" class="btn-action btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="<?= BASEURL ?>//admin/galeri/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Hapus foto ini?')"><i class="fas fa-trash"></i> Hapus</a>
                                 </div>
                             </td>
                         </tr>

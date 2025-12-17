@@ -131,7 +131,7 @@
             <p style="color: #999; font-size: 14px;">Perbarui informasi prestasi di bawah ini</p>
         </div>
 
-        <form action="/kp-sd2-dukuhbenda/public/admin/prestasi/update" method="POST" enctype="multipart/form-data">
+        <form action="<?= BASEURL ?>/admin/prestasi/update" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $prestasi['id'] ?>">
             
             <div class="form-group">
@@ -171,7 +171,7 @@
                 
                 <?php if (!empty($prestasi['foto'])): ?>
                     <div class="current-img-box">
-                        <img src="/kp-sd2-dukuhbenda/public/assets/img/prestasi/<?= $prestasi['foto'] ?>" alt="Current Foto">
+                        <img src="<?= BASEURL ?>/assets/img/prestasi/<?= $prestasi['foto'] ?>" alt="Current Foto">
                         <div class="current-img-info">
                             <strong>Foto Saat Ini</strong><br>
                             Biarkan kosong jika tidak ingin mengubah foto.
@@ -189,7 +189,7 @@
             </div>
 
             <button type="submit" class="btn-submit">Update Data Prestasi</button>
-            <a href="/kp-sd2-dukuhbenda/public/admin/prestasi" class="btn-cancel">Batal & Kembali</a>
+            <a href="<?= BASEURL ?>/admin/prestasi" class="btn-cancel">Batal & Kembali</a>
         </form>
     </div>
 

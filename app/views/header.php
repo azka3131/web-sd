@@ -8,11 +8,11 @@
     
     <link rel="shortcut icon" href="<?= BASEURL ?>/assets/img/logo_tel.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="/kp-sd2-dukuhbenda/public/assets/css/style.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/style.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* CSS Tambahan Khusus Navbar */
+        /* CSS KHUSUS TOMBOL PPDB (HIGHLIGHT) */
         a.nav-ppdb-highlight {
             color: #ffc107 !important;
             font-weight: 800;
@@ -34,6 +34,7 @@
             align-items: center;
         }
         
+        /* CSS KHUSUS TAMPILAN MOBILE (HP) */
         @media (max-width: 900px) {
             a.nav-ppdb-highlight {
                 background-color: rgba(255, 193, 7, 0.1);
@@ -41,6 +42,56 @@
                 border-radius: 5px;
                 justify-content: center;
                 margin-top: 10px;
+            }
+
+            /* --- PERBAIKAN ALIGNMENT PROFIL DROPDOWN --- */
+            
+            /* 1. Wrapper Dropdown mengambil lebar penuh */
+            .dropdown-mobile-wrap {
+                width: 100%;
+                display: block;
+            }
+
+            /* 2. Tombol Profil dipaksa rata kiri (flex-start) */
+            .dropdown-mobile-wrap .dropbtn {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start; /* KUNCI: Rata Kiri */
+                width: 100%;
+                padding: 10px 20px; /* Samakan padding kiri dengan link lain (cek style.css) */
+                text-align: left;
+                background: none;
+                border: none;
+                
+                /* Font styling agar sama dengan menu <a> */
+                font-size: 15px; 
+                font-weight: bold;
+                font-family: inherit;
+                color: #333; /* Sesuaikan warna text mobile menu */
+                cursor: pointer;
+            }
+
+            /* 3. Icon dan Teks Profil */
+            .dropdown-mobile-wrap .dropbtn span {
+                display: flex;
+                align-items: center;
+                gap: 10px; /* Jarak icon user ke tulisan Profil */
+                flex-grow: 1;
+            }
+
+            /* 4. Panah Dropdown di ujung kanan */
+            .dropdown-mobile-wrap .dropbtn .arrow-icon {
+                margin-left: auto;
+            }
+
+            /* 5. Pastikan menu biasa (Beranda, Guru, dll) juga rata kiri */
+            .nav-links > a {
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px; /* Jarak icon ke teks */
+                /* text-align: left sudah default */
             }
         }
     </style>
@@ -72,7 +123,7 @@
     <header>
         <div class="container navbar">
             <div class="logo-area">
-                <img src="/kp-sd2-dukuhbenda/public/assets/img/logo_tel.png" alt="Logo">
+                <img src="<?= BASEURL ?>/assets/img/logo_tel.png" alt="Logo">
                 <div class="logo-text">
                     <h2>SDN DUKUHBENDA 02</h2>
                     <small>Bumijawa, Kab. Tegal</small>
@@ -91,7 +142,7 @@
                 </div>
 
                 <div class="nav-links">
-                    <a href="/kp-sd2-dukuhbenda/public/"><i class="fas fa-home"></i> Beranda</a>
+                    <a href="<?= BASEURL ?>"><i class="fas fa-home"></i> Beranda</a>
 
                     <div class="dropdown-mobile-wrap">
                         <a href="#" class="dropbtn" onclick="toggleDropdown(this, event)">
@@ -99,23 +150,23 @@
                             <i class="fas fa-chevron-down arrow-icon"></i>
                         </a>
                         <div class="dropdown-content">
-                            <a href="/kp-sd2-dukuhbenda/public/profil/visi-misi">Visi & Misi</a>
-                            <a href="/kp-sd2-dukuhbenda/public/profil/sejarah">Sejarah Sekolah</a>
-                            <a href="/kp-sd2-dukuhbenda/public/profil/struktur">Struktur Organisasi</a>
+                            <a href="<?= BASEURL ?>/profil/visi-misi">Visi & Misi</a>
+                            <a href="<?= BASEURL ?>/profil/sejarah">Sejarah Sekolah</a>
+                            <a href="<?= BASEURL ?>/profil/struktur">Struktur Organisasi</a>
                         </div>
                     </div>
 
-                    <a href="/kp-sd2-dukuhbenda/public/guru"><i class="fas fa-chalkboard-teacher"></i> Guru & Staf</a>
+                    <a href="<?= BASEURL ?>/guru"><i class="fas fa-chalkboard-teacher"></i> Guru & Staf</a>
 
-                    <a href="/kp-sd2-dukuhbenda/public/berita"><i class="fas fa-newspaper"></i> Berita</a>
+                    <a href="<?= BASEURL ?>/berita"><i class="fas fa-newspaper"></i> Berita</a>
 
-                    <a href="/kp-sd2-dukuhbenda/public/ppdb" class="nav-ppdb-highlight">
-                        <i class="fas fa-star"></i> PPDB ONLINE
+                    <a href="<?= BASEURL ?>/ppdb" class="nav-ppdb-highlight">
+                        <i class="fas fa-star"></i> PPDB 
                     </a>
                 </div>
 
                 <div class="nav-buttons">
-                    <a href="/kp-sd2-dukuhbenda/public/admin/login" class="btn-block btn-login-mobile">Login</a>
+                    <a href="<?= BASEURL ?>/admin/login" class="btn-block btn-login-mobile">Login</a>
                 </div>
             </nav>
         </div>
@@ -137,3 +188,5 @@
             }
         }
     </script>
+</body>
+</html>

@@ -123,7 +123,7 @@
             <p style="color: #999; font-size: 14px;">Isi detail prestasi siswa di bawah ini</p>
         </div>
 
-        <form action="/kp-sd2-dukuhbenda/public/admin/prestasi/simpan" method="POST" enctype="multipart/form-data">
+        <form action="<?= BASEURL ?>/admin/prestasi/simpan" method="POST" enctype="multipart/form-data">
             
             <div class="form-group">
                 <label>Judul Prestasi / Lomba</label>
@@ -169,7 +169,7 @@
             </div>
 
             <button type="submit" class="btn-submit">Simpan Data Prestasi</button>
-            <a href="/kp-sd2-dukuhbenda/public/admin/prestasi" class="btn-cancel">Batal & Kembali</a>
+            <a href="<?= BASEURL ?>/admin/prestasi" class="btn-cancel">Batal & Kembali</a>
         </form>
     </div>
 

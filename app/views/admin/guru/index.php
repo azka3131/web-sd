@@ -62,9 +62,9 @@
         <div class="page-header">
             <div class="header-title">
                 <h1>Kelola Data Guru</h1>
-                <p><a href="/kp-sd2-dukuhbenda/public/admin/dashboard"><i class="fas fa-arrow-left"></i> Kembali ke Dashboard</a></p>
+                <p><a href="<?= BASEURL ?>/admin/dashboard"><i class="fas fa-arrow-left"></i> Kembali ke Dashboard</a></p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/guru/tambah" class="btn-add">
+            <a href="<?= BASEURL ?>/admin/guru/tambah" class="btn-add">
                 <i class="fas fa-user-plus"></i> Tambah Guru Baru
             </a>
         </div>
@@ -90,9 +90,9 @@
                             <td><?= $no++; ?></td>
                             <td>
                                 <?php if($row['foto']): ?>
-                                    <img src="/kp-sd2-dukuhbenda/public/assets/img/guru/<?= $row['foto']; ?>" class="avatar-img" alt="Foto">
+                                    <img src="<?= BASEURL ?>/assets/img/guru/<?= $row['foto']; ?>" class="avatar-img" alt="Foto">
                                 <?php else: ?>
-                                    <img src="/kp-sd2-dukuhbenda/public/assets/img/default-user.png" class="avatar-img" alt="Def">
+                                    <img src="<?= BASEURL ?>/assets/img/default-user.png" class="avatar-img" alt="Def">
                                 <?php endif; ?>
                             </td>
                             <td style="font-weight: 700; color: #333;"><?= $row['nama']; ?></td>
@@ -100,8 +100,8 @@
                             <td><?= $row['pendidikan']; ?></td>
                             <td>
                                 <div class="action-btn-group">
-                                    <a href="/kp-sd2-dukuhbenda/public/admin/guru/edit?id=<?= $row['id']; ?>" class="btn-action btn-edit"><i class="fas fa-edit"></i> Edit</a>
-                                    <a href="/kp-sd2-dukuhbenda/public/admin/guru/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Hapus data guru ini?')"><i class="fas fa-trash"></i> Hapus</a>
+                                    <a href="<?= BASEURL ?>/admin/guru/edit?id=<?= $row['id']; ?>" class="btn-action btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="<?= BASEURL ?>/admin/guru/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Hapus data guru ini?')"><i class="fas fa-trash"></i> Hapus</a>
                                 </div>
                             </td>
                         </tr>

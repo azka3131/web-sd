@@ -104,11 +104,11 @@
     <div class="page-header">
         <div class="page-title">
             <h1>Kelola Struktur Organisasi</h1>
-            <a href="/kp-sd2-dukuhbenda/public/admin/dashboard" class="back-link">
+            <a href="<?= BASEURL ?>/admin/dashboard" class="back-link">
                 &larr; Kembali ke Dashboard
             </a>
         </div>
-        <a href="/kp-sd2-dukuhbenda/public/admin/struktur/create" class="btn-add">
+        <a href="<?= BASEURL ?>/admin/struktur/create" class="btn-add">
             <i class="fas fa-plus"></i> Tambah Pengurus
         </a>
     </div>
@@ -130,15 +130,15 @@
                     <tr>
                         <td><?= $s['urutan']; ?></td>
                         <td>
-                            <img src="/kp-sd2-dukuhbenda/public/assets/img/struktur/<?= !empty($s['foto']) ? $s['foto'] : 'default.png'; ?>" class="thumb" alt="Foto">
+                            <img src="<?= BASEURL ?>/assets/img/struktur/<?= !empty($s['foto']) ? $s['foto'] : 'default.png'; ?>" class="thumb" alt="Foto">
                         </td>
                         <td><span class="text-nama"><?= $s['nama']; ?></span></td>
                         <td><span class="text-jabatan"><?= $s['jabatan']; ?></span></td>
                         <td>
-                            <a href="/kp-sd2-dukuhbenda/public/admin/struktur/edit?id=<?= $s['id']; ?>" class="btn-action btn-edit">
+                            <a href="<?= BASEURL ?>/admin/struktur/edit?id=<?= $s['id']; ?>" class="btn-action btn-edit">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
-                            <a href="/kp-sd2-dukuhbenda/public/admin/struktur/delete?id=<?= $s['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Yakin ingin menghapus data ini?')">
+                            <a href="<?= BASEURL ?>/admin/struktur/delete?id=<?= $s['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Yakin ingin menghapus data ini?')">
                                 <i class="fas fa-trash"></i> Hapus
                             </a>
                         </td>

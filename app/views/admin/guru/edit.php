@@ -21,7 +21,7 @@
 <div class="container">
     <h2>Edit Data Guru</h2>
 
-    <form action="/kp-sd2-dukuhbenda/public/admin/guru/update" method="POST" enctype="multipart/form-data">
+    <form action="<?= BASEURL ?>/admin/guru/update" method="POST" enctype="multipart/form-data">
         
         <input type="hidden" name="id" value="<?= $data['id']; ?>">
         <input type="hidden" name="foto_lama" value="<?= $data['foto']; ?>">
@@ -37,7 +37,7 @@
 
         <label>Foto Saat Ini</label>
         <?php if($data['foto']): ?>
-            <img src="/kp-sd2-dukuhbenda/public/assets/img/guru/<?= $data['foto']; ?>" class="img-preview" width="100">
+            <img src="<?= BASEURL ?>/assets/img/guru/<?= $data['foto']; ?>" class="img-preview" width="100">
         <?php else: ?>
             <p><small>Belum ada foto</small></p>
         <?php endif; ?>
@@ -49,7 +49,7 @@
         <textarea name="bio" rows="4" style="width:100%; margin-bottom:15px;"><?= $data['bio']; ?></textarea>
 
         <br>
-        <a href="/kp-sd2-dukuhbenda/public/admin/guru" class="btn btn-back">Batal</a>
+        <a href="<?= BASEURL ?>/admin/guru" class="btn btn-back">Batal</a>
         <button type="submit" class="btn btn-save">Update Data</button>
     </form>
 </div>

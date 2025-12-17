@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Form Berita</title>
-    <link rel="stylesheet" href="/kp-sd2-dukuhbenda/public/assets/css/style.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/style.css">
     <style>
         body { padding: 30px; background: #f4f6f9; }
         .form-box { background: white; padding: 30px; border-radius: 10px; max-width: 800px; margin: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -16,7 +16,7 @@
 <div class="form-box">
     <h2><?= isset($berita) ? 'Edit Berita' : 'Tambah Berita Baru'; ?></h2>
     
-    <form action="<?= isset($berita) ? '/kp-sd2-dukuhbenda/public/admin/berita/update' : '/kp-sd2-dukuhbenda/public/admin/berita/simpan'; ?>" method="POST" enctype="multipart/form-data">
+    <form action="<?= isset($berita) ? '<?= BASEURL ?>/admin/berita/update' : '<?= BASEURL ?>/admin/berita/simpan'; ?>" method="POST" enctype="multipart/form-data">
         
         <?php if(isset($berita)): ?>
             <input type="hidden" name="id" value="<?= $berita['id']; ?>">
@@ -30,7 +30,7 @@
 
         <label>Gambar Utama</label>
         <?php if(isset($berita) && $berita['gambar']): ?>
-            <br><img src="/kp-sd2-dukuhbenda/public/assets/img/berita/<?= $berita['gambar']; ?>" style="width: 100px; margin: 10px 0;">
+            <br><img src="<?= BASEURL ?>/assets/img/berita/<?= $berita['gambar']; ?>" style="width: 100px; margin: 10px 0;">
             <p style="font-size: 12px; color: #666;">Biarkan kosong jika tidak ingin mengganti gambar.</p>
         <?php endif; ?>
         
@@ -41,7 +41,7 @@
 
         <div style="margin-top: 20px;">
             <button type="submit">Simpan Berita</button>
-            <a href="/kp-sd2-dukuhbenda/public/admin/berita" style="margin-left: 15px; color: #666; text-decoration: none;">Batal</a>
+            <a href="<?= BASEURL ?>/admin/berita" style="margin-left: 15px; color: #666; text-decoration: none;">Batal</a>
         </div>
     </form>
 </div>

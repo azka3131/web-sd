@@ -21,7 +21,7 @@
 <div class="container">
     <h2>Edit Foto Galeri</h2>
 
-    <form action="/kp-sd2-dukuhbenda/public/admin/galeri/update" method="POST" enctype="multipart/form-data">
+    <form action="<?= BASEURL ?>/admin/galeri/update" method="POST" enctype="multipart/form-data">
         
         <input type="hidden" name="id" value="<?= $data['id']; ?>">
         <input type="hidden" name="foto_lama" value="<?= $data['filename']; ?>">
@@ -31,7 +31,7 @@
 
         <label>Foto Saat Ini</label>
         <?php if($data['filename']): ?>
-            <img src="/kp-sd2-dukuhbenda/public/assets/img/galeri/<?= $data['filename']; ?>" class="img-preview" width="150">
+            <img src="<?= BASEURL ?>/assets/img/galeri/<?= $data['filename']; ?>" class="img-preview" width="150">
         <?php else: ?>
             <small>Tidak ada foto</small>
         <?php endif; ?>
@@ -47,7 +47,7 @@
         <input type="text" name="link_drive" value="<?= $data['link_drive']; ?>" placeholder="https://...">
 
         <br>
-        <a href="/kp-sd2-dukuhbenda/public/admin/galeri" class="btn btn-back">Batal</a>
+        <a href="<?= BASEURL ?>/admin/galeri" class="btn btn-back">Batal</a>
         <button type="submit" class="btn btn-save">Update Galeri</button>
     </form>
 </div>

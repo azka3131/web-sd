@@ -20,7 +20,7 @@
 <div class="container">
     <h2>Tambah Data Guru</h2>
 
-    <form action="/kp-sd2-dukuhbenda/public/admin/guru/simpan" method="POST" enctype="multipart/form-data">
+    <form action="<?= BASEURL ?>/admin/guru/simpan" method="POST" enctype="multipart/form-data">
         
         <label>Nama Lengkap (dengan gelar)</label>
         <input type="text" name="nama" required placeholder="Contoh: Budi Santoso, S.Pd.">
@@ -38,7 +38,7 @@
         <textarea name="bio" rows="4" style="width:100%; margin-bottom:15px;" placeholder="Deskripsi singkat tentang guru..."></textarea>
 
         <br>
-        <a href="/kp-sd2-dukuhbenda/public/admin/guru" class="btn btn-back">Batal</a>
+        <a href="<?= BASEURL ?>/admin/guru" class="btn btn-back">Batal</a>
         <button type="submit" class="btn btn-save">Simpan Data</button>
     </form>
 </div>

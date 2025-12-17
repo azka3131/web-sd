@@ -1,0 +1,13 @@
+php_value display_errors On
+php_value mbstring.http_input auto
+php_value date.timezone America/New_York
+# Opsi D: Rewrite Rule Agresif & Aman untuk Assets
+# Aktifkan Modul Rewrite
+RewriteEngine On
+# Tentukan file index default
+DirectoryIndex index.php index.html
+# 1. Kecualikan file dan folder yang benar-benar ada (file statis seperti CSS, JS, Gambar)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# 2. Rewrite semua permintaan lainnya ke index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

@@ -26,7 +26,7 @@
 <div class="form-container">
     <h2><?= isset($fasilitas) ? 'Edit Fasilitas' : 'Tambah Fasilitas Baru'; ?></h2>
 
-    <form action="<?= isset($fasilitas) ? '/kp-sd2-dukuhbenda/public/admin/fasilitas/update' : '/kp-sd2-dukuhbenda/public/admin/fasilitas/simpan'; ?>" method="POST" enctype="multipart/form-data">
+    <form action="<?= isset($fasilitas) ? '<?= BASEURL ?>/admin/fasilitas/update' : '<?= BASEURL ?>/admin/fasilitas/simpan'; ?>" method="POST" enctype="multipart/form-data">
         
         <?php if(isset($fasilitas)): ?>
             <input type="hidden" name="id" value="<?= $fasilitas['id']; ?>">
@@ -40,7 +40,7 @@
         <div class="form-group">
             <label>Foto Fasilitas</label>
             <?php if(isset($fasilitas) && $fasilitas['gambar']): ?>
-                <img src="/kp-sd2-dukuhbenda/public/assets/img/fasilitas/<?= $fasilitas['gambar']; ?>" class="preview-img">
+                <img src="<?= BASEURL ?>/assets/img/fasilitas/<?= $fasilitas['gambar']; ?>" class="preview-img">
                 <br><small style="color: #999;">Biarkan kosong jika tidak ingin mengubah foto</small>
             <?php endif; ?>
             
@@ -53,7 +53,7 @@
         </div>
 
         <button type="submit" class="btn-submit">Simpan Data</button>
-        <a href="/kp-sd2-dukuhbenda/public/admin/fasilitas" class="btn-back">Batal & Kembali</a>
+        <a href="<?= BASEURL ?>/admin/fasilitas" class="btn-back">Batal & Kembali</a>
     </form>
 </div>
 

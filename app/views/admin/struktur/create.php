@@ -116,7 +116,7 @@
     <div class="card">
         <h2>Tambah Pengurus</h2>
 
-        <form action="/kp-sd2-dukuhbenda/public/admin/struktur/store" method="POST" enctype="multipart/form-data">
+        <form action="<?= BASEURL ?>/admin/struktur/store" method="POST" enctype="multipart/form-data">
             
             <div class="form-group">
                 <label>Nama Lengkap</label>
@@ -140,7 +140,7 @@
 
             <button type="submit" class="btn-submit">Simpan Data</button>
             
-            <a href="/kp-sd2-dukuhbenda/public/admin/dashboard" class="btn-cancel">Batal & Kembali</a>
+            <a href="<?= BASEURL ?>/admin/dashboard" class="btn-cancel">Batal & Kembali</a>
         </form>
     </div>
 </div>

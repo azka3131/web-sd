@@ -151,11 +151,11 @@
         <div class="page-header">
             <div class="page-title">
                 <h2>Kelola Data Prestasi</h2>
-                <a href="/kp-sd2-dukuhbenda/public/admin/dashboard" class="back-link">
+                <a href="<?= BASEURL ?>/admin/dashboard" class="back-link">
                     <i class="fas fa-arrow-left"></i> Kembali ke Dashboard
                 </a>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/prestasi/tambah" class="btn-add">
+            <a href="<?= BASEURL ?>/admin/prestasi/tambah" class="btn-add">
                 <i class="fas fa-plus"></i> Tambah Prestasi Baru
             </a>
         </div>
@@ -185,7 +185,7 @@
                             <td><?= $i+1 ?></td>
                             <td>
                                 <?php if($row['foto']): ?>
-                                    <img src="/kp-sd2-dukuhbenda/public/assets/img/prestasi/<?= $row['foto'] ?>" class="thumb-img">
+                                    <img src="<?= BASEURL ?>/assets/img/prestasi/<?= $row['foto'] ?>" class="thumb-img">
                                 <?php else: ?>
                                     <div style="width:80px; height:60px; background:#eee; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#ccc; font-size:10px;">No IMG</div>
                                 <?php endif; ?>
@@ -203,10 +203,10 @@
                                 </span>
                             </td>
                             <td>
-                                <a href="/kp-sd2-dukuhbenda/public/admin/prestasi/edit?id=<?= $row['id'] ?>" class="action-btn btn-edit" title="Edit">
+                                <a href="<?= BASEURL ?>/admin/prestasi/edit?id=<?= $row['id'] ?>" class="action-btn btn-edit" title="Edit">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
-                                <a href="/kp-sd2-dukuhbenda/public/admin/prestasi/hapus?id=<?= $row['id'] ?>" class="action-btn btn-delete" title="Hapus" onclick="return confirm('Yakin ingin menghapus data ini?')">
+                                <a href="<?= BASEURL ?>/admin/prestasi/hapus?id=<?= $row['id'] ?>" class="action-btn btn-delete" title="Hapus" onclick="return confirm('Yakin ingin menghapus data ini?')">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

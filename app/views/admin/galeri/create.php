@@ -20,7 +20,7 @@
 <div class="container">
     <h2>Upload Foto Galeri</h2>
 
-    <form action="/kp-sd2-dukuhbenda/public/admin/galeri/simpan" method="POST" enctype="multipart/form-data">
+    <form action="<?= BASEURL ?>/admin/galeri/simpan" method="POST" enctype="multipart/form-data">
         
         <label>Judul Foto</label>
         <input type="text" name="judul" required placeholder="Contoh: Upacara Bendera Senin">
@@ -36,7 +36,7 @@
         <input type="text" name="link_drive" placeholder="Contoh: https://drive.google.com/drive/folders/...">
         <small style="display:block; margin-top:-10px; margin-bottom:15px; color:grey;">Isi jika ingin mengarahkan ke album foto lengkap.</small>
         <br>
-        <a href="/kp-sd2-dukuhbenda/public/admin/galeri" class="btn btn-back">Batal</a>
+        <a href="<?= BASEURL ?>/admin/galeri" class="btn btn-back">Batal</a>
         <button type="submit" class="btn btn-save">Upload Foto</button>
     </form>
 </div>

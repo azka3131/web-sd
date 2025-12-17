@@ -26,7 +26,7 @@
 <div class="form-container">
     <h2><?= isset($struktur) ? 'Edit Data Struktur' : 'Tambah Struktur Organisasi'; ?></h2>
 
-    <form action="<?= isset($struktur) ? '/kp-sd2-dukuhbenda/public/admin/struktur/update' : '/kp-sd2-dukuhbenda/public/admin/struktur/simpan'; ?>" method="POST" enctype="multipart/form-data">
+    <form action="<?= isset($struktur) ? BASEURL . '/admin/struktur/update' : BASEURL . '/admin/struktur/simpan'; ?>" method="POST" enctype="multipart/form-data">
         
         <?php if(isset($struktur)): ?>
             <input type="hidden" name="id" value="<?= $struktur['id']; ?>">
@@ -51,7 +51,7 @@
         <div class="form-group">
             <label>Foto Profil</label>
             <?php if(isset($struktur) && $struktur['foto']): ?>
-                <img src="/kp-sd2-dukuhbenda/public/assets/img/struktur/<?= $struktur['foto']; ?>" class="preview-img">
+                <img src="<?= BASEURL ?>/assets/img/struktur/<?= $struktur['foto']; ?>" class="preview-img">
                 <br><small style="color: #999;">Biarkan kosong jika tidak ingin mengubah foto</small>
             <?php endif; ?>
             
@@ -59,7 +59,7 @@
         </div>
 
         <button type="submit" class="btn-submit">Simpan Data</button>
-        <a href="/kp-sd2-dukuhbenda/public/admin/struktur" class="btn-back">Batal & Kembali</a>
+        <a href="<?= BASEURL ?>/admin/struktur" class="btn-back">Batal & Kembali</a>
     </form>
 </div>
 

@@ -30,7 +30,7 @@
                             <?= htmlspecialchars($p['jenis_juara']); ?>
                         </span>
 
-                        <img src="/kp-sd2-dukuhbenda/public/assets/img/prestasi/<?= $p['foto'] ?: 'default.png'; ?>" 
+                        <img src="<?= BASEURL ?>/assets/img/prestasi/<?= $p['foto'] ?: 'default.png'; ?>" 
                              alt="<?= htmlspecialchars($p['judul']); ?>">
                     </div>
 

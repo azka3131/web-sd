@@ -54,9 +54,9 @@
         <div class="page-header">
             <div class="header-title">
                 <h1>Kelola Fasilitas Sekolah</h1>
-                <p><a href="/kp-sd2-dukuhbenda/public/admin/dashboard"><i class="fas fa-arrow-left"></i> Kembali ke Dashboard</a></p>
+                <p><a href="<?= BASEURL ?>/admin/dashboard"><i class="fas fa-arrow-left"></i> Kembali ke Dashboard</a></p>
             </div>
-            <a href="/kp-sd2-dukuhbenda/public/admin/fasilitas/tambah" class="btn-add">
+            <a href="<?= BASEURL ?>/admin/fasilitas/tambah" class="btn-add">
                 <i class="fas fa-plus"></i> Tambah Fasilitas
             </a>
         </div>
@@ -81,7 +81,7 @@
                             <td><?= $no++; ?></td>
                             <td>
                                 <?php if($row['gambar']): ?>
-                                    <img src="/kp-sd2-dukuhbenda/public/assets/img/fasilitas/<?= $row['gambar']; ?>" class="thumb-img" alt="Thumb">
+                                    <img src="<?= BASEURL ?>/assets/img/fasilitas/<?= $row['gambar']; ?>" class="thumb-img" alt="Thumb">
                                 <?php else: ?>
                                     <span style="font-size:12px; color:#ccc;">No Image</span>
                                 <?php endif; ?>
@@ -92,8 +92,8 @@
                             </td>
                             <td>
                                 <div class="action-btn-group">
-                                    <a href="/kp-sd2-dukuhbenda/public/admin/fasilitas/edit?id=<?= $row['id']; ?>" class="btn-action btn-edit"><i class="fas fa-edit"></i> Edit</a>
-                                    <a href="/kp-sd2-dukuhbenda/public/admin/fasilitas/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Hapus fasilitas ini?')"><i class="fas fa-trash"></i> Hapus</a>
+                                    <a href="<?= BASEURL ?>/admin/fasilitas/edit?id=<?= $row['id']; ?>" class="btn-action btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="<?= BASEURL ?>/admin/fasilitas/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Hapus fasilitas ini?')"><i class="fas fa-trash"></i> Hapus</a>
                                 </div>
                             </td>
                         </tr>

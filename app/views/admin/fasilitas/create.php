@@ -20,7 +20,7 @@
 <div class="container">
     <h2>Tambah Fasilitas Baru</h2>
 
-    <form action="/kp-sd2-dukuhbenda/public/admin/fasilitas/simpan" method="POST" enctype="multipart/form-data">
+    <form action="<?= BASEURL ?>/admin/fasilitas/simpan" method="POST" enctype="multipart/form-data">
         
         <label>Nama Fasilitas</label>
         <input type="text" name="nama" required placeholder="Contoh: Perpustakaan Sekolah">
@@ -33,7 +33,7 @@
         <textarea name="deskripsi" rows="4" placeholder="Jelaskan kondisi atau fungsi fasilitas ini..."></textarea>
 
         <br>
-        <a href="/kp-sd2-dukuhbenda/public/admin/fasilitas" class="btn btn-back">Batal</a>
+        <a href="<?= BASEURL ?>/admin/fasilitas" class="btn btn-back">Batal</a>
         <button type="submit" class="btn btn-save">Simpan Data</button>
     </form>
 </div>

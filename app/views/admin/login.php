@@ -139,12 +139,12 @@
 <body>
 
     <div class="login-box">
-        <img src="<?= BASEURL ?>/assets/img/logo.jpg" alt="Logo SD" class="login-logo">
+        <img src="/kp-sd2-dukuhbenda/public/assets/img/logo_tel.png" alt="Logo SD" class="login-logo">
         
         <h2>Admin Panel</h2>
         <p class="subtitle">Silakan login untuk mengelola website</p>
 
-        <form action="<?= BASEURL ?>/admin/login-process" method="POST">
+        <form action="/kp-sd2-dukuhbenda/public/admin/login-process" method="POST">
             
             <div class="input-group">
                 <label>Username</label>
@@ -165,7 +165,7 @@
             <button type="submit" class="btn-login">MASUK <i class="fas fa-sign-in-alt"></i></button>
         </form>
 
-        <a href="<?= BASEURL ?>/" class="back-home">
+        <a href="/kp-sd2-dukuhbenda/public/" class="back-home">
             &larr; Kembali ke Website Utama
         </a>
     </div>

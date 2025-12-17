@@ -22,7 +22,7 @@
 <div class="container">
     <h2>Edit Berita</h2>
 
-    <form action="/kp-sd2-dukuhbenda/public/admin/berita/update" method="POST" enctype="multipart/form-data">
+    <form action="<?= BASEURL ?>/admin/berita/update" method="POST" enctype="multipart/form-data">
         
         <input type="hidden" name="id" value="<?= $data['id']; ?>">
         <input type="hidden" name="gambar_lama" value="<?= $data['gambar']; ?>">
@@ -32,7 +32,7 @@
 
         <label>Gambar Saat Ini</label>
         <?php if($data['gambar']): ?>
-            <img src="/kp-sd2-dukuhbenda/public/assets/img/berita/<?= $data['gambar']; ?>" class="img-preview" width="150">
+            <img src="<?= BASEURL ?>/assets/img/berita/<?= $data['gambar']; ?>" class="img-preview" width="150">
             <br>
         <?php else: ?>
             <p><small>Belum ada gambar</small></p>
@@ -45,7 +45,7 @@
         <textarea name="isi" required><?= $data['isi']; ?></textarea>
 
         <br>
-        <a href="/kp-sd2-dukuhbenda/public/admin/berita" class="btn btn-back">Batal</a>
+        <a href="<?= BASEURL ?>/admin/berita" class="btn btn-back">Batal</a>
         <button type="submit" class="btn btn-save">Update Berita</button>
     </form>
 </div>

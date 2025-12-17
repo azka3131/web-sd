@@ -147,7 +147,7 @@
             <p>Publikasikan informasi terbaru seputar sekolah</p>
         </div>
 
-        <form action="/kp-sd2-dukuhbenda/public/admin/berita/simpan" method="POST" enctype="multipart/form-data">
+        <form action="<?= BASEURL ?>/admin/berita/simpan" method="POST" enctype="multipart/form-data">
             
             <div class="form-group">
                 <label>Judul Berita</label>
@@ -176,7 +176,7 @@
                 <i class="fas fa-paper-plane"></i> Simpan Berita
             </button>
             
-            <a href="/kp-sd2-dukuhbenda/public/admin/berita" class="btn-cancel">Batal & Kembali</a>
+            <a href="<?= BASEURL ?>//admin/berita" class="btn-cancel">Batal & Kembali</a>
         </form>
     </div>
 

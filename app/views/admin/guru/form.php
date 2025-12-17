@@ -50,7 +50,7 @@
 <div class="form-container">
     <h2><?= isset($guru) ? 'Edit Data Guru' : 'Tambah Guru Baru'; ?></h2>
 
-    <form action="<?= isset($guru) ? '/kp-sd2-dukuhbenda/public/admin/guru/update' : '/kp-sd2-dukuhbenda/public/admin/guru/simpan'; ?>" method="POST" enctype="multipart/form-data">
+    <form action="<?= isset($guru) ? BASEURL . '/admin/guru/update' : BASEURL . '/admin/guru/simpan'; ?>" method="POST" enctype="multipart/form-data">
         
         <?php if(isset($guru)): ?>
             <input type="hidden" name="id" value="<?= $guru['id']; ?>">
@@ -74,7 +74,7 @@
         <div class="form-group">
             <label>Foto Profil</label>
             <?php if(isset($guru) && $guru['foto']): ?>
-                <img src="/kp-sd2-dukuhbenda/public/assets/img/guru/<?= $guru['foto']; ?>" class="preview-img">
+                <img src="<?= BASEURL ?>/assets/img/guru/<?= $guru['foto']; ?>" class="preview-img">
                 <br><small style="color: #999;">Biarkan kosong jika tidak ingin mengubah foto</small>
             <?php endif; ?>
             <input type="file" name="foto">
@@ -86,7 +86,7 @@
         </div>
 
         <button type="submit" class="btn-submit">Simpan Data</button>
-        <a href="/kp-sd2-dukuhbenda/public/admin/guru" class="btn-back">Batal & Kembali</a>
+        <a href="<?= BASEURL ?>/admin/guru" class="btn-back">Batal & Kembali</a>
     </form>
 </div>
 

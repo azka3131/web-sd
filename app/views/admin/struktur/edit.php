@@ -125,7 +125,7 @@
     <div class="card">
         <h2>Edit Pengurus</h2>
 
-        <form action="/kp-sd2-dukuhbenda/public/admin/struktur/update" method="POST" enctype="multipart/form-data">
+        <form action="<?= BASEURL ?>/admin/struktur/update" method="POST" enctype="multipart/form-data">
             
             <input type="hidden" name="id" value="<?= $data['id']; ?>">
 
@@ -152,13 +152,13 @@
                 <?php if (!empty($data['foto'])): ?>
                     <br>
                     <small>Foto saat ini:</small><br>
-                    <img src="/kp-sd2-dukuhbenda/public/assets/img/struktur/<?= $data['foto']; ?>" class="img-preview" alt="Foto Lama">
+                    <img src="<?= BASEURL ?>/assets/img/struktur/<?= $data['foto']; ?>" class="img-preview" alt="Foto Lama">
                 <?php endif; ?>
             </div>
 
             <button type="submit" class="btn-submit">Simpan Perubahan</button>
             
-            <a href="/kp-sd2-dukuhbenda/public/admin/dashboard" class="btn-cancel">Batal & Kembali</a>
+            <a href="<?= BASEURL ?>/admin/dashboard" class="btn-cancel">Batal & Kembali</a>
         </form>
     </div>
 </div>

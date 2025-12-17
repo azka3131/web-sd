@@ -116,7 +116,7 @@
 
     <div class="page-header">
         <h2>Kelola Brosur PPDB</h2>
-        <a href="/kp-sd2-dukuhbenda/public/admin/dashboard" class="back-link">
+        <a href="<?= BASEURL ?>/admin/dashboard" class="back-link">
             <i class="fas fa-arrow-left"></i> Kembali ke Dashboard
         </a>
     </div>
@@ -127,7 +127,7 @@
             <h3 class="card-title">📷 Brosur Saat Ini</h3>
             <div class="brosur-preview">
                 <?php if(!empty($data['file_brosur'])): ?>
-                    <img src="/kp-sd2-dukuhbenda/public/assets/img/ppdb/<?= $data['file_brosur'] ?>" alt="Brosur PPDB">
+                    <img src="<?= BASEURL ?>/assets/img/ppdb/<?= $data['file_brosur'] ?>" alt="Brosur PPDB">
                 <?php else: ?>
                     <div style="text-align: center; padding: 50px; color: #aaa;">
                         <i class="fas fa-image" style="font-size: 40px;"></i><br>
@@ -143,7 +143,7 @@
         <div class="card-box">
             <h3 class="card-title">📤 Ganti Brosur</h3>
             
-            <form action="/kp-sd2-dukuhbenda/public/admin/ppdb/update" method="POST" enctype="multipart/form-data">
+            <form action="<?= BASEURL ?>/admin/ppdb/update" method="POST" enctype="multipart/form-data">
                 
                 <label for="file-upload" class="custom-file-upload" style="width: 100%;">
                     <div class="upload-area">

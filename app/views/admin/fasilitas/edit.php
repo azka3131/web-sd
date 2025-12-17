@@ -21,7 +21,7 @@
 <div class="container">
     <h2>Edit Fasilitas</h2>
 
-    <form action="/kp-sd2-dukuhbenda/public/admin/fasilitas/update" method="POST" enctype="multipart/form-data">
+    <form action="<?= BASEURL ?>/admin/fasilitas/update" method="POST" enctype="multipart/form-data">
         
         <input type="hidden" name="id" value="<?= $data['id']; ?>">
         <input type="hidden" name="foto_lama" value="<?= $data['gambar']; ?>">
@@ -31,7 +31,7 @@
 
         <label>Foto Saat Ini</label>
         <?php if($data['gambar']): ?>
-            <img src="/kp-sd2-dukuhbenda/public/assets/img/fasilitas/<?= $data['gambar']; ?>" class="img-preview" width="150">
+            <img src="<?= BASEURL ?>/assets/img/fasilitas/<?= $data['gambar']; ?>" class="img-preview" width="150">
         <?php else: ?>
             <small>Tidak ada foto</small>
         <?php endif; ?>
@@ -44,7 +44,7 @@
         <textarea name="deskripsi" rows="4"><?= $data['deskripsi']; ?></textarea>
 
         <br>
-        <a href="/kp-sd2-dukuhbenda/public/admin/fasilitas" class="btn btn-back">Batal</a>
+        <a href="<?= BASEURL ?>/admin/fasilitas" class="btn btn-back">Batal</a>
         <button type="submit" class="btn btn-save">Update Fasilitas</button>
     </form>
 </div>
