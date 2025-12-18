@@ -164,10 +164,6 @@
                         <i class="fas fa-star"></i> PPDB 
                     </a>
                 </div>
-
-                <div class="nav-buttons">
-                    <a href="<?= BASEURL ?>/admin/login" class="btn-block btn-login-mobile">Login</a>
-                </div>
             </nav>
         </div>
     </header>

@@ -1,17 +1,15 @@
 <?php
-namespace Admin;
+namespace Admin; // Namespace Dashboard harus Admin
+
+// Panggil file AuthController.php yang ada di folder SAMA (admin)
+require_once __DIR__ . '/AuthController.php'; 
 
 class DashboardController {
     public function index() {
-        session_start();
-        
-        // Cek login
-        if (!isset($_SESSION['admin'])) {
-            header("Location: /kp-sd2-dukuhbenda/public/admin/login");
-            exit;
-        }
+        // Panggil fungsi static check() dari class AuthController
+        AuthController::check(); 
 
-        // Hapus tanda komentar (//) agar view terpanggil
+        // Tampilkan view dashboard
         require_once __DIR__ . '/../../../app/views/admin/dashboard.php';
     }
 }

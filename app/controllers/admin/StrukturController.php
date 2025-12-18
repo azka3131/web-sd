@@ -4,18 +4,20 @@ namespace Admin;
 
 require_once __DIR__ . '/../../models/Struktur.php';
 
+// Load AuthController agar fitur keamanan (Login Check & Timeout) aktif
+require_once __DIR__ . '/AuthController.php';
+
 class StrukturController {
 
     private $model;
 
     public function __construct() {
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
-        if (!isset($_SESSION['admin'])) {
-            header("Location: /kp-sd2-dukuhbenda/public/admin/login");
-            exit;
-        }
+        // === PASANG PENGAMANAN DISINI ===
+        // Fungsi ini otomatis mengecek:
+        // 1. Apakah user sudah login?
+        // 2. Apakah user sudah diam lebih dari 60 menit (Timeout)?
+        AuthController::check();
+
         $this->model = new \Struktur();
     }
 
@@ -40,6 +42,7 @@ class StrukturController {
             $allowed = ['jpg', 'jpeg', 'png'];
             $ext = strtolower(pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION));
 
+            // Jika ekstensi bukan jpg/jpeg/png, tolak!
             if (!in_array($ext, $allowed)) {
                 echo "<script>
                         alert('Format file salah! Mohon upload file gambar (JPG, JPEG, atau PNG).');
@@ -69,6 +72,10 @@ class StrukturController {
     }
 
     public function edit() {
+        if (!isset($_GET['id'])) {
+            header("Location: /kp-sd2-dukuhbenda/public/admin/struktur");
+            exit;
+        }
         $id = $_GET['id'];
         $struktur = $this->model->getById($id);
         require_once __DIR__ . '/../../views/admin/struktur/form.php';
@@ -118,6 +125,10 @@ class StrukturController {
 
     // NAMA FUNGSI DELETE (BUKAN HAPUS) SESUAI ROUTES
     public function delete() {
+        if (!isset($_GET['id'])) {
+            header("Location: /kp-sd2-dukuhbenda/public/admin/struktur");
+            exit;
+        }
         $id = $_GET['id'];
         
         $data = $this->model->getById($id);

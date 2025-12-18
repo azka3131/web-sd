@@ -16,6 +16,31 @@ class Berita {
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function search($keyword = null, $date = null) {
+        $sql = "SELECT * FROM berita WHERE 1=1"; // Trik agar bisa nambah "AND" dengan mudah
+        $params = [];
+
+        // Jika ada kata kunci (Judul/Isi)
+        if (!empty($keyword)) {
+            $sql .= " AND (judul LIKE ? OR isi LIKE ?)";
+            $params[] = "%$keyword%";
+            $params[] = "%$keyword%";
+        }
+
+        // Jika ada filter tanggal
+        if (!empty($date)) {
+            // Asumsi kolom di database bernama 'tanggal'
+            $sql .= " AND DATE(tanggal) = ?";
+            $params[] = $date;
+        }
+
+        $sql .= " ORDER BY id DESC";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // 2. UNTUK PUBLIK: Hanya ambil berita yang statusnya 'published'
     public function getAllPublished() {
         // Asumsi kolom status ada di DB. Jika error, pastikan sudah ALTER TABLE.

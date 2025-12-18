@@ -4,16 +4,19 @@ namespace Admin;
 
 require_once __DIR__ . '/../../models/InfoSekolah.php';
 
+// Load AuthController agar fitur keamanan (Login Check & Timeout) aktif
+require_once __DIR__ . '/AuthController.php';
+
 class InfoController {
 
     private $model;
 
     public function __construct() {
-        if (session_status() == PHP_SESSION_NONE) session_start();
-        if (!isset($_SESSION['admin'])) {
-            header("Location: /kp-sd2-dukuhbenda/public/admin/login");
-            exit;
-        }
+
+        // 1. Apakah user sudah login?
+        // 2. Apakah user sudah diam lebih dari 60 menit (Timeout)?
+        AuthController::check();
+
         $this->model = new \InfoSekolah();
     }
 
@@ -31,7 +34,7 @@ class InfoController {
                 'prestasi' => $_POST['prestasi']
             ]);
             
-            // [PERBAIKAN] Setelah simpan, langsung lempar balik ke Dashboard
+            // Setelah simpan, langsung lempar balik ke Dashboard
             header("Location: /kp-sd2-dukuhbenda/public/admin/dashboard?pesan=info_updated");
             exit;
         }
