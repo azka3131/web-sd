@@ -30,6 +30,7 @@ $routes = [
     '/admin/berita/edit' => 'Admin\BeritaController@edit',
     '/admin/berita/update' => 'Admin\BeritaController@update',
     '/admin/berita/hapus' => 'Admin\BeritaController@delete',
+    '/admin/berita/status' => 'Admin\BeritaController@setStatus',
 
     // === ROUTES ADMIN GURU ===
     '/admin/guru' => 'Admin\GuruController@index',
@@ -87,6 +88,17 @@ $routes = [
     '/admin/prestasi/update' => 'Admin\PrestasiController@update',
     '/admin/prestasi/hapus'  => 'Admin\PrestasiController@delete',
 
+    // ... route yang sudah ada ...
+    
+    // Route Admin Visi Misi
+    '/admin/visi-misi' => 'Admin\VisiMisiController@index',
+    '/admin/visi-misi/update' => 'Admin\VisiMisiController@update',
+    
+    // Route Admin Sejarah
+    '/admin/sejarah' => 'Admin\SejarahController@index',
+    '/admin/sejarah/update' => 'Admin\SejarahController@update',
+
 // ... (Kode sesudahnya)
+
 ];
 

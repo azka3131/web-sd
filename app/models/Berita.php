@@ -10,8 +10,16 @@ class Berita {
         $this->db = $database->connect();
     }
 
+    // 1. UNTUK ADMIN: Ambil SEMUA berita (Baik yang tayang maupun arsip)
     public function getAll() {
         $query = $this->db->query("SELECT * FROM berita ORDER BY id DESC");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // 2. UNTUK PUBLIK: Hanya ambil berita yang statusnya 'published'
+    public function getAllPublished() {
+        // Asumsi kolom status ada di DB. Jika error, pastikan sudah ALTER TABLE.
+        $query = $this->db->query("SELECT * FROM berita WHERE status = 'published' ORDER BY id DESC");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -21,7 +29,11 @@ class Berita {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // --- FUNGSI BARU UNTUK ADMIN ---
+    // 3. UNTUK ADMIN: Fungsi Ubah Status (Arsip/Terbitkan)
+    public function updateStatus($id, $status) {
+        $stmt = $this->db->prepare("UPDATE berita SET status = ? WHERE id = ?");
+        return $stmt->execute([$status, $id]);
+    }
 
     public function create($data) {
         $query = "INSERT INTO berita (judul, slug, isi, gambar, tanggal, status) 

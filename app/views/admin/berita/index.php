@@ -1,3 +1,5 @@
+<?php if(!isset($_SESSION)) session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -11,7 +13,7 @@
         body { background-color: #f4f6f9; color: #333; padding: 40px 20px; }
 
         /* CONTAINER UTAMA */
-        .container { max-width: 1100px; margin: 0 auto; }
+        .container { max-width: 1200px; margin: 0 auto; } /* Sedikit diperlebar agar muat kolom status */
 
         /* HEADER PAGE */
         .page-header {
@@ -28,16 +30,8 @@
             margin-bottom: 5px;
         }
 
-        .header-title p {
-            color: #888;
-            font-size: 14px;
-        }
-
-        .header-title p a {
-            color: #4FB6C7;
-            text-decoration: none;
-            font-weight: 600;
-        }
+        .header-title p { color: #888; font-size: 14px; }
+        .header-title p a { color: #4FB6C7; text-decoration: none; font-weight: 600; }
         .header-title p a:hover { text-decoration: underline; }
 
         /* TOMBOL TAMBAH */
@@ -65,15 +59,12 @@
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            overflow: hidden; /* Biar sudut tabel ikut rounded */
+            overflow: hidden;
             border: 1px solid #eee;
         }
 
-        /* TABEL STYLING */
-        .custom-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+        /* TABEL STYLES */
+        .custom-table { width: 100%; border-collapse: collapse; }
 
         .custom-table th {
             background-color: #fcfcfc;
@@ -100,59 +91,52 @@
 
         /* GAMBAR THUMBNAIL */
         .thumb-img {
-            width: 70px;
-            height: 50px;
+            width: 70px; height: 50px;
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             background-color: #eee;
         }
 
-        /* TOMBOL AKSI (EDIT & HAPUS) */
-        .action-btn-group {
-            display: flex;
-            gap: 10px;
-        }
+        /* [BARU] STYLE BADGE STATUS */
+        .status-badge { padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; display: inline-block; }
+        .status-published { background: #E0F2F1; color: #00695C; border: 1px solid #B2DFDB; } /* Hijau Teal */
+        .status-archived { background: #ECEFF1; color: #546E7A; border: 1px solid #CFD8DC; }   /* Abu-abu */
+
+        /* TOMBOL AKSI GROUP */
+        .action-btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
 
         .btn-action {
-            padding: 8px 12px;
+            padding: 6px 12px;
             border-radius: 8px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             text-decoration: none;
             transition: 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 5px;
+            border: 1px solid transparent;
         }
 
-        .btn-edit {
-            background-color: #FFF8E1; /* Kuning muda */
-            color: #FBC02D;
-            border: 1px solid #FFF8E1;
-        }
-        .btn-edit:hover {
-            background-color: #FBC02D;
-            color: white;
-            border-color: #FBC02D;
-        }
+        .btn-edit { background-color: #FFF8E1; color: #FBC02D; border-color: #FFF8E1; }
+        .btn-edit:hover { background-color: #FBC02D; color: white; border-color: #FBC02D; }
 
-        .btn-delete {
-            background-color: #FFEBEE; /* Merah muda */
-            color: #E53935;
-            border: 1px solid #FFEBEE;
-        }
-        .btn-delete:hover {
-            background-color: #E53935;
-            color: white;
-            border-color: #E53935;
-        }
+        .btn-delete { background-color: #FFEBEE; color: #E53935; border-color: #FFEBEE; }
+        .btn-delete:hover { background-color: #E53935; color: white; border-color: #E53935; }
+
+        /* [BARU] TOMBOL ARSIP & TERBIT */
+        .btn-archive { background-color: #ECEFF1; color: #546E7A; border-color: #CFD8DC; }
+        .btn-archive:hover { background-color: #607D8B; color: white; border-color: #607D8B; }
+
+        .btn-publish { background-color: #E8F5E9; color: #2E7D32; border-color: #C8E6C9; }
+        .btn-publish:hover { background-color: #4CAF50; color: white; border-color: #4CAF50; }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .page-header { flex-direction: column; align-items: flex-start; gap: 15px; }
             .btn-add { width: 100%; justify-content: center; }
-            .card-box { overflow-x: auto; } /* Scroll samping kalau tabel kepanjangan */
+            .card-box { overflow-x: auto; }
         }
     </style>
 </head>
@@ -175,39 +159,68 @@
                 <thead>
                     <tr>
                         <th width="5%">No</th>
-                        <th width="15%">Gambar</th>
-                        <th width="45%">Judul Berita</th>
+                        <th width="10%">Gambar</th>
+                        <th width="35%">Judul Berita</th>
                         <th width="15%">Tanggal</th>
-                        <th width="20%">Aksi</th>
+                        <th width="10%">Status</th> <th width="25%">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if (empty($data)): ?>
                         <tr>
-                            <td colspan="5" style="text-align:center; padding: 40px; color:#999;">
+                            <td colspan="6" style="text-align:center; padding: 40px; color:#999;">
+                                <i class="fas fa-newspaper" style="font-size: 30px; margin-bottom: 10px; opacity: 0.5;"></i><br>
                                 Belum ada berita. Silakan tambah berita baru.
                             </td>
                         </tr>
                     <?php else: ?>
                         <?php $no = 1; foreach ($data as $row): ?>
-                        <tr>
+                        <tr style="<?= ($row['status'] ?? 'published') == 'archived' ? 'opacity: 0.6; background-color: #f9f9f9;' : '' ?>">
                             <td><?= $no++; ?></td>
                             <td>
-                                <?php if($row['gambar']): ?>
+                                <?php if(!empty($row['gambar'])): ?>
                                     <img src="<?= BASEURL ?>/assets/img/berita/<?= $row['gambar']; ?>" class="thumb-img" alt="Thumb">
                                 <?php else: ?>
-                                    <span style="font-size:12px; color:#ccc;">No Image</span>
+                                    <div style="width:70px; height:50px; background:#eee; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:10px; color:#aaa;">No Img</div>
                                 <?php endif; ?>
                             </td>
-                            <td style="font-weight: 600; color: #333;"><?= $row['judul']; ?></td>
-                            <td><span style="background:#eef4fc; color:#4FB6C7; padding:4px 10px; border-radius:15px; font-size:12px; font-weight:bold;"><?= date('d M Y', strtotime($row['tanggal'])); ?></span></td>
+                            <td>
+                                <strong style="color: #333; font-size: 15px;"><?= htmlspecialchars($row['judul']); ?></strong>
+                            </td>
+                            <td>
+                                <span style="font-size:13px; color:#666;">
+                                    <i class="far fa-calendar-alt"></i> <?= date('d M Y', strtotime($row['tanggal'])); ?>
+                                </span>
+                            </td>
+                            
+                            <td>
+                                <?php if(($row['status'] ?? 'published') == 'published'): ?>
+                                    <span class="status-badge status-published">Tayang</span>
+                                <?php else: ?>
+                                    <span class="status-badge status-archived">Diarsipkan</span>
+                                <?php endif; ?>
+                            </td>
+
                             <td>
                                 <div class="action-btn-group">
+                                    
+                                    <?php if(($row['status'] ?? 'published') == 'published'): ?>
+                                        <a href="<?= BASEURL ?>/admin/berita/status?id=<?= $row['id']; ?>&action=archive" 
+                                           class="btn-action btn-archive" title="Sembunyikan dari publik">
+                                            <i class="fas fa-archive"></i> Arsip
+                                        </a>
+                                    <?php else: ?>
+                                        <a href="<?= BASEURL ?>/admin/berita/status?id=<?= $row['id']; ?>&action=publish" 
+                                           class="btn-action btn-publish" title="Tampilkan kembali">
+                                            <i class="fas fa-upload"></i> Terbit
+                                        </a>
+                                    <?php endif; ?>
+
                                     <a href="<?= BASEURL ?>/admin/berita/edit?id=<?= $row['id']; ?>" class="btn-action btn-edit">
-                                        <i class="fas fa-edit"></i> Edit
+                                        <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="<?= BASEURL ?>/admin/berita/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Yakin ingin menghapus berita ini?')">
-                                        <i class="fas fa-trash"></i> Hapus
+                                    <a href="<?= BASEURL ?>/admin/berita/hapus?id=<?= $row['id']; ?>" class="btn-action btn-delete" onclick="return confirm('Yakin ingin menghapus berita ini secara permanen?')">
+                                        <i class="fas fa-trash"></i>
                                     </a>
                                 </div>
                             </td>

@@ -1,6 +1,5 @@
 <?php
 
-// Perhatikan: Titik dua-nya hanya satu (..) karena foldernya sejajar app
 require_once __DIR__ . '/../models/Berita.php';
 
 class BeritaController {
@@ -8,9 +7,10 @@ class BeritaController {
     // Menampilkan semua berita di halaman depan
     public function index() {
         $beritaModel = new Berita();
-        $data = $beritaModel->getAll();
         
-        // Mengirim data ke view public
+        // GANTI: Hanya ambil yang statusnya 'published'
+        $data = $beritaModel->getAllPublished();
+        
         require_once __DIR__ . '/../views/berita/index.php';
     }
 

@@ -1,14 +1,24 @@
 <?php
 
 require_once __DIR__ . '/../models/Struktur.php';
+// [BARU] Load model ProfilSekolah agar bisa ambil data Visi Misi
+require_once __DIR__ . '/../models/ProfilSekolah.php';
 
 class ProfilController {
 
     public function visiMisi() {
+        // [BARU] Ambil data Visi & Misi dari database
+        $profilModel = new ProfilSekolah();
+        $data = $profilModel->getProfile();
+
+        // Kirim $data ke view visi_misi.php
         require_once __DIR__ . '/../views/profil/visi_misi.php';
     }
 
     public function sejarah() {
+
+        $profilModel = new ProfilSekolah(); // Pastikan class ini sudah di-require di atas file
+        $data = $profilModel->getProfile();
         require_once __DIR__ . '/../views/profil/sejarah.php';
     }
 

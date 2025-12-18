@@ -221,7 +221,7 @@ if (isset($kepsek) && !empty($kepsek)) {
                     
                     <button type="submit" class="btn-teal" style="width: 100%;">Kirim Pesan</button>
                 </form>
-
+                    
                 <div class="wa-wrapper" style="margin-top: 25px;">
                     <a href="https://wa.me/6287830153654?text=Halo%20Admin%20SD%20Negeri%202%20Dukuhbenda" target="_blank" class="btn-wa-fancy">
                         <div class="wa-icon-box">
@@ -248,146 +248,79 @@ if (isset($kepsek) && !empty($kepsek)) {
     </div>
 </section>
 
+<div class="visitor-float">
+    <span class="icon">👀</span>
+    <div class="text">
+        <small>Total Pengunjung</small>
+        <strong><?= number_format($totalPengunjung ?? 0, 0, ',', '.'); ?></strong>
+    </div>
+</div>
+
 <style>
-/* --- FOTO KEPALA SEKOLAH (BIAR GANTENG & TIDAK GEPENG) --- */
-
-.sambutan-section {
-    padding: 60px 0;
-}
-
-.sambutan-card {
+/* [BARU] CSS VISITOR COUNTER */
+.visitor-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #004aad, #007bff);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
-    gap: 40px;
-    background: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.05); /* Shadow lembut */
-}
-
-.sambutan-img {
-    flex-shrink: 0; /* Agar foto tidak tergencet teks */
-}
-
-/* Tampilan Desktop (Layar Besar) */
-.sambutan-img img {
-    width: 280px;           /* Lebar fix */
-    height: 350px;          /* Tinggi fix (Portrait) */
-    object-fit: cover;      /* KUNCI ANTI GEPENG: Foto menyesuaikan bingkai */
-    object-position: top center; /* Fokus ke wajah (atas) */
-    border-radius: 15px;    /* Sudut melengkung */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    border: 5px solid #fff; /* Frame putih biar elegan */
+    gap: 10px;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
     transition: transform 0.3s ease;
+    cursor: default;
 }
+.visitor-float:hover { transform: scale(1.05); }
+.visitor-float .icon { font-size: 24px; }
+.visitor-float .text { display: flex; flex-direction: column; line-height: 1.2; }
+.visitor-float .text small { font-size: 10px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; }
+.visitor-float .text strong { font-size: 18px; font-weight: bold; }
 
-.sambutan-img img:hover {
-    transform: scale(1.02) rotate(1deg); /* Efek goyang dikit pas hover */
-}
 
-.sambutan-text {
-    flex-grow: 1;
-}
+/* --- FOTO KEPALA SEKOLAH (BIAR GANTENG & TIDAK GEPENG) --- */
+.sambutan-section { padding: 60px 0; }
+.sambutan-card { display: flex; align-items: center; gap: 40px; background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
+.sambutan-img { flex-shrink: 0; }
+.sambutan-img img { width: 280px; height: 350px; object-fit: cover; object-position: top center; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 5px solid #fff; transition: transform 0.3s ease; }
+.sambutan-img img:hover { transform: scale(1.02) rotate(1deg); }
+.sambutan-text { flex-grow: 1; }
 
-/* --- TAMPILAN MOBILE (HP) - REVISI BIAR BAGUS --- */
 @media (max-width: 900px) {
-    .sambutan-card {
-        flex-direction: column; /* Susun ke bawah (Foto atas, Teks bawah) */
-        text-align: center;     /* Teks rata tengah */
-        padding: 30px 20px;
-        gap: 25px;
-    }
-
-    .sambutan-img {
-        margin: 0 auto;         /* Posisi foto di tengah */
-        width: 100%;            /* Container full width */
-        display: flex;
-        justify-content: center;
-    }
-
-    .sambutan-img img {
-        width: 200px;           /* Ukuran di HP lebih kecil tapi proporsional */
-        height: 250px;          /* Tetap Portrait 4:5 */
-        max-width: none;        /* Reset batasan lama */
-        border-radius: 20px 5px 20px 5px; /* Variasi sudut unik */
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    
+    .sambutan-card { flex-direction: column; text-align: center; padding: 30px 20px; gap: 25px; }
+    .sambutan-img { margin: 0 auto; width: 100%; display: flex; justify-content: center; }
+    .sambutan-img img { width: 200px; height: 250px; max-width: none; border-radius: 20px 5px 20px 5px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
     .sambutan-text h3 { font-size: 1.2rem; }
     .sambutan-text h4 { font-size: 1.5rem; margin-top: 5px; }
 }
 
-
-/* --- CSS LAINNYA (TETAP SEPERTI SEBELUMNYA) --- */
-
-/* SECTION 3 KOTAK */
-.quick-menu-section {
-    padding: 60px 0;
-    position: relative;
-    z-index: 10;
-}
+/* --- CSS LAINNYA --- */
+.quick-menu-section { padding: 60px 0; position: relative; z-index: 10; }
 .quick-menu-grid { display: grid; gap: 30px; }
 .three-cols-centered { grid-template-columns: repeat(3, 1fr); max-width: 1100px; margin: 0 auto; }
-
-/* Base Card Style */
-.quick-card {
-    background: #fff; border-radius: 20px; padding: 40px 20px;
-    text-align: center; text-decoration: none; color: #444;
-    position: relative; overflow: hidden; border: 1px solid #f0f0f0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex; flex-direction: column; justify-content: center;
-}
+.quick-card { background: #fff; border-radius: 20px; padding: 40px 20px; text-align: center; text-decoration: none; color: #444; position: relative; overflow: hidden; border: 1px solid #f0f0f0; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; justify-content: center; }
 .quick-card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); border-color: transparent; }
-
-/* Icon Circle Styling */
-.quick-card .icon-circle {
-    width: 80px; height: 80px; margin: 0 auto 20px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 32px; color: #fff; transition: transform 0.5s ease;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
+.quick-card .icon-circle { width: 80px; height: 80px; margin: 0 auto 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: #fff; transition: transform 0.5s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 .quick-card:hover .icon-circle { transform: scale(1.1) rotate(10deg); }
-
-/* Typography & Button */
 .quick-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; color: #2c3e50; }
 .quick-card p { font-size: 0.95rem; color: #888; margin-bottom: 25px; line-height: 1.6; }
-.btn-action {
-    display: inline-block; padding: 10px 25px; border-radius: 50px;
-    background: #f4f6f9; color: #555; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
-}
+.btn-action { display: inline-block; padding: 10px 25px; border-radius: 50px; background: #f4f6f9; color: #555; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
 .quick-card:hover .btn-action { color: #fff; padding-left: 35px; }
-
-/* Warna Kartu */
 .card-galeri .icon-circle { background: linear-gradient(135deg, #FF9966, #FF5E62); box-shadow: 0 10px 20px rgba(255, 94, 98, 0.3); }
 .card-galeri:hover .btn-action { background: linear-gradient(135deg, #FF9966, #FF5E62); box-shadow: 0 5px 15px rgba(255, 94, 98, 0.4); }
-
 .card-prestasi .icon-circle { background: linear-gradient(135deg, #F2994A, #F2C94C); box-shadow: 0 10px 20px rgba(242, 201, 76, 0.3); }
 .card-prestasi:hover .btn-action { background: linear-gradient(135deg, #F2994A, #F2C94C); box-shadow: 0 5px 15px rgba(242, 201, 76, 0.4); }
-
 .card-fasilitas .icon-circle { background: linear-gradient(135deg, #11998e, #38ef7d); box-shadow: 0 10px 20px rgba(56, 239, 125, 0.3); }
 .card-fasilitas:hover .btn-action { background: linear-gradient(135deg, #11998e, #38ef7d); box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4); }
-
-/* Tombol WA */
 .wa-wrapper { display: flex; justify-content: center; }
-.btn-wa-fancy {
-    display: inline-flex; align-items: center; gap: 15px;
-    background: linear-gradient(45deg, #25D366, #128C7E);
-    color: #fff !important; text-decoration: none;
-    padding: 12px 30px 12px 12px; border-radius: 50px;
-    font-weight: 700; font-size: 1rem;
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-    transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.2);
-}
-.wa-icon-box {
-    width: 40px; height: 40px; background: #fff; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: #25D366; font-size: 20px; transition: 0.3s;
-}
+.btn-wa-fancy { display: inline-flex; align-items: center; gap: 15px; background: linear-gradient(45deg, #25D366, #128C7E); color: #fff !important; text-decoration: none; padding: 12px 30px 12px 12px; border-radius: 50px; font-weight: 700; font-size: 1rem; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.2); }
+.wa-icon-box { width: 40px; height: 40px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #25D366; font-size: 20px; transition: 0.3s; }
 .btn-wa-fancy:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5); filter: brightness(1.1); }
 .btn-wa-fancy:hover .wa-icon-box { transform: rotate(360deg); }
-
-/* Responsif Mobile General */
 @media (max-width: 900px) {
     .three-cols-centered { grid-template-columns: 1fr; padding: 0 20px; }
     .quick-card { padding: 30px; margin-bottom: 15px; }
