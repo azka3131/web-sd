@@ -10,22 +10,14 @@
         /* Global Style */
         body { font-family: 'Segoe UI', sans-serif; background-color: #f4f6f9; color: #333; padding: 30px; }
         .main-wrapper { max-width: 1200px; margin: 0 auto; }
-
-        /* Header */
         .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
         .page-title h1 { font-size: 28px; color: #2c3e50; margin: 0; font-weight: 800; }
         .back-link { color: #4FB6C7; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px; }
         .btn-add { background-color: #4FB6C7; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; gap: 8px; box-shadow: 0 4px 15px rgba(79, 182, 199, 0.4); transition: 0.3s; }
         .btn-add:hover { background-color: #3da0b0; transform: translateY(-2px); }
-
-        /* === SECTIONS (PEMISAH ANTAR LEVEL) === */
         .org-section { margin-bottom: 50px; position: relative; }
         .section-title { text-align: center; margin-bottom: 20px; color: #aaa; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 15px; }
         .section-title::before, .section-title::after { content: ""; height: 1px; background: #e0e0e0; width: 50px; }
-        
-        /* === GRID LAYOUTS === */
-        
-        /* Level 1: Pimpinan (Flexbox Center) */
         .leaders-row {
             display: flex;
             justify-content: center;
@@ -33,14 +25,12 @@
             flex-wrap: wrap;
         }
 
-        /* Level 2 & 3: Grid Biasa */
         .grid-regular {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 30px;
         }
 
-        /* === CARD STYLE === */
         .org-card {
             background: white; border-radius: 15px; overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;
@@ -54,14 +44,11 @@
         .img-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
         .card-name { font-size: 1.1em; font-weight: 700; color: #2c3e50; margin: 0 0 5px 0; }
-        
-        /* Warna Badge Berbeda Tiap Level */
         .role-badge { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.8em; font-weight: 700; }
-        .role-pimpinan { background: #e3f2fd; color: #1565c0; } /* Biru Tua */
-        .role-guru { background: #e8f5e9; color: #2e7d32; } /* Hijau */
-        .role-staff { background: #fff3e0; color: #ef6c00; } /* Oranye */
+        .role-pimpinan { background: #e3f2fd; color: #1565c0; } 
+        .role-guru { background: #e8f5e9; color: #2e7d32; } 
+        .role-staff { background: #fff3e0; color: #ef6c00; }
 
-        /* Footer Aksi */
         .card-footer { display: flex; border-top: 1px solid #f0f0f0; }
         .action-btn { flex: 1; padding: 12px 0; text-align: center; text-decoration: none; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; transition: 0.2s; }
         .btn-edit { background: #fff; color: #f1c40f; border-right: 1px solid #f0f0f0; }
@@ -69,18 +56,16 @@
         .btn-delete { background: #fff; color: #e74c3c; }
         .btn-delete:hover { background: #fee2e2; color: #c0392b; }
 
-        /* Garis Konektor Visual (Opsional) */
         .connector-vertical { width: 2px; height: 30px; background: #ddd; margin: 0 auto; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
 <?php
-// === LOGIC PHP: MEMISAHKAN KELOMPOK ===
 $pimpinan = [];
 $guru = [];
 $staff = [];
-$siswa = []; // Jika ada data siswa
+$siswa = []; 
 
 if (!empty($data)) {
     foreach ($data as $s) {

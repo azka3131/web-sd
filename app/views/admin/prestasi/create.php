@@ -17,8 +17,6 @@
             align-items: center;
             min-height: 100vh;
         }
-
-        /* Form Container (Card) */
         .form-card {
             background: white;
             width: 100%;
@@ -73,8 +71,6 @@
             resize: vertical;
             min-height: 100px;
         }
-
-        /* Tombol Simpan */
         .btn-submit {
             width: 100%;
             padding: 14px;
@@ -95,7 +91,6 @@
             box-shadow: 0 5px 15px rgba(79, 182, 199, 0.3);
         }
 
-        /* Tombol Kembali */
         .btn-cancel {
             display: block;
             text-align: center;

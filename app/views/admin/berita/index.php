@@ -8,14 +8,13 @@
     <title>Kelola Berita Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* RESET & GLOBAL */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f4f6f9; color: #333; padding: 40px 20px; }
 
-        /* CONTAINER UTAMA */
+        
         .container { max-width: 1200px; margin: 0 auto; } /* Sedikit diperlebar agar muat kolom status */
 
-        /* HEADER PAGE */
+        
         .page-header {
             display: flex;
             justify-content: space-between;
@@ -34,7 +33,7 @@
         .header-title p a { color: #4FB6C7; text-decoration: none; font-weight: 600; }
         .header-title p a:hover { text-decoration: underline; }
 
-        /* TOMBOL TAMBAH */
+        
         .btn-add {
             background-color: #4FB6C7;
             color: white;
@@ -54,7 +53,7 @@
             box-shadow: 0 6px 20px rgba(79, 182, 199, 0.4);
         }
 
-        /* CARD TABLE */
+        
         .card-box {
             background: white;
             border-radius: 15px;
@@ -63,7 +62,7 @@
             border: 1px solid #eee;
         }
 
-        /* TABEL STYLES */
+        
         .custom-table { width: 100%; border-collapse: collapse; }
 
         .custom-table th {
@@ -89,7 +88,7 @@
         .custom-table tr:last-child td { border-bottom: none; }
         .custom-table tr:hover { background-color: #fafafa; }
 
-        /* GAMBAR THUMBNAIL */
+        
         .thumb-img {
             width: 70px; height: 50px;
             object-fit: cover;
@@ -98,12 +97,12 @@
             background-color: #eee;
         }
 
-        /* [BARU] STYLE BADGE STATUS */
+        
         .status-badge { padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; display: inline-block; }
         .status-published { background: #E0F2F1; color: #00695C; border: 1px solid #B2DFDB; } /* Hijau Teal */
         .status-archived { background: #ECEFF1; color: #546E7A; border: 1px solid #CFD8DC; }   /* Abu-abu */
 
-        /* TOMBOL AKSI GROUP */
+        
         .action-btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
 
         .btn-action {
@@ -132,7 +131,7 @@
         .btn-publish { background-color: #E8F5E9; color: #2E7D32; border-color: #C8E6C9; }
         .btn-publish:hover { background-color: #4CAF50; color: white; border-color: #4CAF50; }
 
-        /* RESPONSIVE */
+        
         @media (max-width: 768px) {
             .page-header { flex-direction: column; align-items: flex-start; gap: 15px; }
             .btn-add { width: 100%; justify-content: center; }

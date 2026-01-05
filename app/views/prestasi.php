@@ -108,14 +108,13 @@
 </div>
 
 <style>
-/* --- STYLE SEARCH & FILTER --- */
 .filter-container {
     background: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     margin-bottom: 50px;
-    margin-top: -80px; /* Efek menumpuk ke header */
+    margin-top: -80px; 
     position: relative;
     z-index: 10;
 }
@@ -142,14 +141,12 @@
     transition: 0.3s;
 }
 
-/* Warna Focus Input diganti jadi #4FB6C7 */
 .search-group input:focus {
     border-color: #4FB6C7;
     outline: none;
     box-shadow: 0 0 0 3px rgba(79, 182, 199, 0.1);
 }
 
-/* Warna Tombol Search diganti jadi #4FB6C7 */
 .search-group button {
     position: absolute;
     right: 5px;
@@ -278,7 +275,6 @@
     line-height: 1.6;
 }
 
-/* --- EMPTY STATE --- */
 .empty-state {
     text-align: center;
     padding: 60px 20px;

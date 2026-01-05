@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Reset sederhana khusus halaman ini */
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9; /* Warna background abu-abu muda lembut */
+            background-color: #f4f6f9; 
             color: #333;
             margin: 0;
             padding: 20px;
@@ -20,17 +20,17 @@
             min-height: 100vh;
         }
 
-        /* Kartu Form (Kotak Putih di Tengah) */
+        
         .form-card {
             background: white;
             width: 100%;
-            max-width: 700px; /* Lebar maksimal form */
+            max-width: 700px; 
             padding: 40px;
-            border-radius: 15px; /* Sudut melengkung */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Bayangan halus */
+            border-radius: 15px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
         }
 
-        /* Header Form */
+        
         .form-header {
             text-align: center;
             margin-bottom: 30px;
@@ -49,7 +49,7 @@
             margin: 0;
         }
 
-        /* Styling Input Form */
+        
         .form-group {
             margin-bottom: 20px;
         }
@@ -70,33 +70,32 @@
             font-size: 14px;
             transition: 0.3s;
             background-color: #fafafa;
-            box-sizing: border-box; /* Agar padding tidak melebarkan elemen */
+            box-sizing: border-box;
         }
 
-        /* Efek saat diklik/fokus */
+        
         .form-control:focus {
-            border-color: #4FB6C7; /* Warna Teal Utama */
+            border-color: #4FB6C7; 
             background-color: white;
             outline: none;
             box-shadow: 0 0 0 3px rgba(79, 182, 199, 0.1);
         }
 
         textarea.form-control {
-            resize: vertical; /* Bisa ditarik ke bawah */
+            resize: vertical; 
             min-height: 150px;
             line-height: 1.5;
         }
 
-        /* Helper Layout (Dua Kolom Sejajar) */
         .row-group {
             display: flex;
             gap: 20px;
         }
         .row-group .form-group {
-            flex: 1; /* Membagi lebar sama rata */
+            flex: 1;
         }
 
-        /* Tombol Simpan (Warna Teal) */
+        
         .btn-submit {
             width: 100%;
             padding: 14px;
@@ -113,12 +112,12 @@
         }
 
         .btn-submit:hover {
-            background-color: #3da0b0; /* Warna lebih gelap saat hover */
-            transform: translateY(-2px); /* Efek naik sedikit */
+            background-color: #3da0b0; 
+            transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(79, 182, 199, 0.4);
         }
 
-        /* Tombol Batal/Kembali */
+        
         .btn-cancel {
             display: block;
             text-align: center;
@@ -133,7 +132,7 @@
             text-decoration: underline;
         }
         
-        /* Responsif untuk HP */
+        
         @media (max-width: 600px) {
             .row-group { flex-direction: column; gap: 0; }
         }

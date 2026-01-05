@@ -6,7 +6,6 @@
     <title>Kelola Brosur PPDB</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* GLOBAL STYLE */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f6f9;
@@ -14,7 +13,6 @@
             padding: 30px;
         }
 
-        /* HEADER SECTION */
         .page-header {
             margin-bottom: 30px;
         }
@@ -31,14 +29,11 @@
         }
         .back-link:hover { text-decoration: underline; }
 
-        /* GRID LAYOUT */
         .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
-
-        /* CARD STYLE */
         .card-box {
             background: white;
             border-radius: 15px;
@@ -55,7 +50,6 @@
             padding-bottom: 10px;
         }
 
-        /* IMAGE PREVIEW */
         .brosur-preview {
             width: 100%;
             border-radius: 10px;
@@ -70,7 +64,6 @@
             display: block;
         }
 
-        /* UPLOAD FORM */
         .upload-area {
             text-align: center;
             padding: 40px;
@@ -84,7 +77,7 @@
         .upload-area:hover { background-color: #dff2f6; }
         
         input[type="file"] {
-            display: none; /* Sembunyikan input file asli */
+            display: none; 
         }
 
         .custom-file-upload {
@@ -164,7 +157,6 @@
     </div>
 
     <script>
-        // Script sederhana untuk menampilkan nama file setelah dipilih
         function previewFilename() {
             const input = document.getElementById('file-upload');
             const display = document.getElementById('filename-display');

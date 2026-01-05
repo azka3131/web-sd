@@ -11,16 +11,13 @@ if(!isset($_SESSION)) session_start();
     <link rel="stylesheet" href="/kp-sd2-dukuhbenda/public/assets/css/style.css">
     
     <style>
-        /* Styling khusus halaman Admin agar mirip Struktur Organisasi */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9; /* Background abu muda */
+            background-color: #f4f6f9; 
             margin: 0;
             padding: 30px;
             color: #333;
         }
-
-        /* Bagian Header di Luar Card */
         .page-header {
             margin-bottom: 20px;
         }
@@ -36,7 +33,7 @@ if(!isset($_SESSION)) session_start();
             display: inline-block;
             margin-top: 5px;
             text-decoration: none;
-            color: #4FB6C7; /* Warna biru link */
+            color: #4FB6C7; 
             font-size: 14px;
             font-weight: 500;
         }
@@ -44,18 +41,14 @@ if(!isset($_SESSION)) session_start();
         .back-link:hover {
             text-decoration: underline;
         }
-
-        /* Bagian Card Putih */
         .card-content {
             background: #ffffff;
-            border-radius: 12px; /* Sudut membulat */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Shadow halus */
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
             padding: 30px;
             border: none;
             max-width: 100%;
         }
-
-        /* Styling Form */
         label {
             display: block;
             font-weight: 600;
@@ -78,24 +71,22 @@ if(!isset($_SESSION)) session_start();
             font-size: 14px;
             color: #333;
             font-family: inherit;
-            resize: vertical; /* User bisa tarik tinggi textarea */
+            resize: vertical; 
             transition: border-color 0.3s ease;
         }
 
         textarea:focus {
             outline: none;
-            border-color: #4FB6C7; /* Warna biru saat diklik */
+            border-color: #4FB6C7;
             background-color: #fff;
             box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
         }
-
-        /* Tombol Simpan Modern */
         .btn-save {
-            background-color: #4FB6C7; /* Biru Project */
+            background-color: #4FB6C7; 
             color: white;
             border: none;
             padding: 12px 30px;
-            border-radius: 8px; /* Sedikit membulat */
+            border-radius: 8px; 
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
@@ -107,7 +98,7 @@ if(!isset($_SESSION)) session_start();
 
         .btn-save:hover {
             background-color: #4FB6C7;
-            transform: translateY(-2px); /* Efek naik sedikit saat hover */
+            transform: translateY(-2px); 
         }
         
         .btn-save:active {

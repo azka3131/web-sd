@@ -13,18 +13,18 @@
     </div>
 
     <div class="gallery-container">
-        <?php if(empty($data)): ?>
+        <?php if (empty($data)): ?>
             <div class="empty-state">
                 <div class="icon-box"><i class="fas fa-camera"></i></div>
                 <h3>Belum ada dokumentasi</h3>
                 <p>Dokumentasi kegiatan sekolah akan segera diunggah di sini.</p>
             </div>
         <?php else: ?>
-            
+
             <?php foreach ($data as $foto) : ?>
                 <div class="gallery-card">
                     <div class="gallery-thumb">
-                        <?php if(!empty($foto['filename'])): ?>
+                        <?php if (!empty($foto['filename'])): ?>
                             <img src="/kp-sd2-dukuhbenda/public/assets/img/galeri/<?= $foto['filename']; ?>" alt="<?= $foto['judul']; ?>">
                         <?php else: ?>
                             <img src="https://via.placeholder.com/800x600?text=No+Image" alt="Placeholder">
@@ -33,8 +33,8 @@
 
                     <div class="gallery-content">
                         <h3 class="gallery-title"><?= $foto['judul']; ?></h3>
-                        
-                        <?php if($foto['deskripsi']): ?>
+
+                        <?php if ($foto['deskripsi']): ?>
                             <div class="gallery-scroll-area">
                                 <p class="gallery-desc">
                                     <?= nl2br($foto['deskripsi']); ?>
@@ -42,11 +42,15 @@
                             </div>
                         <?php endif; ?>
 
-                        <?php if(!empty($foto['link_drive'])): ?>
+                        <?php if (!empty($foto['link_drive'])): ?>
                             <div style="margin-top: auto; padding-top: 15px;">
                                 <a href="<?= $foto['link_drive']; ?>" target="_blank" class="btn-album">
                                     <span>Lihat Album Lengkap</span>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
                                 </a>
                             </div>
                         <?php endif; ?>
@@ -60,26 +64,24 @@
 </div>
 
 <style>
-    /* --- GRID SYSTEM (YANG DIUBAH) --- */
     .gallery-container {
         display: grid;
-        /* Ubah 320px jadi 400px agar kartu lebih lebar */
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
-        gap: 40px; /* Jarak antar kartu diperlebar sedikit */
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 40px;
         padding: 0 10px;
     }
 
-    /* --- CARD STYLE --- */
+
     .gallery-card {
         background: #fff;
         border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
         border: 1px solid #f0f0f0;
         display: flex;
         flex-direction: column;
-        height: 100%; 
+        height: 100%;
     }
 
     .gallery-card:hover {
@@ -88,10 +90,9 @@
         border-color: #e0efff;
     }
 
-    /* --- IMAGE WRAPPER (YANG DIUBAH) --- */
+
     .gallery-thumb {
-        /* Ubah tinggi dari 220px jadi 300px agar foto besar & jelas */
-        height: 300px; 
+        height: 300px;
         width: 100%;
         overflow: hidden;
     }
@@ -107,23 +108,22 @@
         transform: scale(1.08);
     }
 
-    /* --- CONTENT AREA --- */
     .gallery-content {
-        padding: 30px; /* Padding diperbesar agar teks lebih lega */
+        padding: 30px;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
     }
 
     .gallery-title {
-        font-size: 1.5rem; /* Font judul dibesarkan sedikit */
+        font-size: 1.5rem;
         font-weight: 700;
         color: #2c3e50;
         margin-bottom: 15px;
         line-height: 1.3;
     }
 
-    /* --- SCROLLABLE DESCRIPTION --- */
+
     .gallery-scroll-area {
         max-height: 120px;
         overflow-y: auto;
@@ -131,25 +131,36 @@
         padding-right: 5px;
     }
 
-    .gallery-scroll-area::-webkit-scrollbar { width: 4px; }
-    .gallery-scroll-area::-webkit-scrollbar-track { background: #f1f1f1; }
-    .gallery-scroll-area::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
-    .gallery-scroll-area::-webkit-scrollbar-thumb:hover { background: #bbb; }
+    .gallery-scroll-area::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .gallery-scroll-area::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .gallery-scroll-area::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+    }
+
+    .gallery-scroll-area::-webkit-scrollbar-thumb:hover {
+        background: #bbb;
+    }
 
     .gallery-desc {
-        font-size: 1rem; /* Font deskripsi diperjelas */
+        font-size: 1rem;
         color: #666;
         line-height: 1.6;
         margin: 0;
     }
 
-    /* --- BUTTON STYLE --- */
     .btn-album {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
-        padding: 12px 0; /* Tombol lebih tebal sedikit */
+        padding: 12px 0;
         width: 100%;
         background-color: #f4f9ff;
         color: #0057b3;
@@ -174,13 +185,22 @@
         border-radius: 15px;
         color: #888;
     }
-    .icon-box { font-size: 40px; margin-bottom: 15px; color: #cbd5e0; }
+
+    .icon-box {
+        font-size: 40px;
+        margin-bottom: 15px;
+        color: #cbd5e0;
+    }
 
     /* --- RESPONSIVE --- */
     @media (max-width: 768px) {
-        /* Di HP tetap 1 kolom tapi gambarnya tinggi */
-        .gallery-container { grid-template-columns: 1fr; } 
-        .gallery-thumb { height: 250px; }
+        .gallery-container {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-thumb {
+            height: 250px;
+        }
     }
 </style>
 

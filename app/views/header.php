@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SD Negeri 2 Dukuhbenda</title>
-    
+
     <link rel="shortcut icon" href="<?= BASEURL ?>/assets/img/logo_tel.png" type="image/x-icon">
 
     <link rel="stylesheet" href="<?= BASEURL ?>/assets/css/style.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* CSS KHUSUS TOMBOL PPDB (HIGHLIGHT) */
         a.nav-ppdb-highlight {
             color: #ffc107 !important;
             font-weight: 800;
@@ -33,8 +32,7 @@
         .navbar .nav-links {
             align-items: center;
         }
-        
-        /* CSS KHUSUS TAMPILAN MOBILE (HP) */
+
         @media (max-width: 900px) {
             a.nav-ppdb-highlight {
                 background-color: rgba(255, 193, 7, 0.1);
@@ -44,54 +42,45 @@
                 margin-top: 10px;
             }
 
-            /* --- PERBAIKAN ALIGNMENT PROFIL DROPDOWN --- */
-            
-            /* 1. Wrapper Dropdown mengambil lebar penuh */
             .dropdown-mobile-wrap {
                 width: 100%;
                 display: block;
             }
 
-            /* 2. Tombol Profil dipaksa rata kiri (flex-start) */
             .dropdown-mobile-wrap .dropbtn {
                 display: flex;
                 align-items: center;
-                justify-content: flex-start; /* KUNCI: Rata Kiri */
+                justify-content: flex-start;
                 width: 100%;
-                padding: 10px 20px; /* Samakan padding kiri dengan link lain (cek style.css) */
+                padding: 10px 20px;
                 text-align: left;
                 background: none;
                 border: none;
-                
-                /* Font styling agar sama dengan menu <a> */
-                font-size: 15px; 
+
+                font-size: 15px;
                 font-weight: bold;
                 font-family: inherit;
-                color: #333; /* Sesuaikan warna text mobile menu */
+                color: #333;
                 cursor: pointer;
             }
 
-            /* 3. Icon dan Teks Profil */
             .dropdown-mobile-wrap .dropbtn span {
                 display: flex;
                 align-items: center;
-                gap: 10px; /* Jarak icon user ke tulisan Profil */
+                gap: 10px;
                 flex-grow: 1;
             }
 
-            /* 4. Panah Dropdown di ujung kanan */
             .dropdown-mobile-wrap .dropbtn .arrow-icon {
                 margin-left: auto;
             }
 
-            /* 5. Pastikan menu biasa (Beranda, Guru, dll) juga rata kiri */
-            .nav-links > a {
+            .nav-links>a {
                 display: flex;
                 width: 100%;
                 justify-content: flex-start;
                 align-items: center;
-                gap: 10px; /* Jarak icon ke teks */
-                /* text-align: left sudah default */
+                gap: 10px;
             }
         }
     </style>
@@ -107,7 +96,7 @@
                 <a href="https://maps.google.com/?cid=4154025381396008849&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="info-item">
                     <i class="fas fa-map-marker-alt"></i> Jl. Raya, Siketi Tengah
                 </a>
-                
+
                 <a href="tel:087830153654" class="info-item">
                     <i class="fas fa-phone"></i> 0878-3015-3654
                 </a>
@@ -161,7 +150,7 @@
                     <a href="<?= BASEURL ?>/berita"><i class="fas fa-newspaper"></i> Berita</a>
 
                     <a href="<?= BASEURL ?>/ppdb" class="nav-ppdb-highlight">
-                        <i class="fas fa-star"></i> PPDB 
+                        <i class="fas fa-star"></i> PPDB
                     </a>
                 </div>
             </nav>
@@ -178,11 +167,12 @@
 
         function toggleDropdown(element, event) {
             if (window.innerWidth <= 900) {
-                event.preventDefault(); 
+                event.preventDefault();
                 const parent = element.parentElement;
                 parent.classList.toggle('active');
             }
         }
     </script>
 </body>
+
 </html>

@@ -97,32 +97,31 @@
 </div>
 
 <style>
-    /* Wrapper Utama Search */
+    
     .search-wrapper {
         max-width: 800px;
         margin: 0 auto 60px auto;
         position: relative;
     }
 
-    /* Bar Kapsul Putih */
+    
     .modern-search-bar {
         display: flex;
         align-items: center;
         background: #ffffff;
         padding: 10px;
         border-radius: 50px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.08); /* Bayangan lembut */
+        box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
         border: 1px solid #eee;
         transition: all 0.3s ease;
     }
 
     .modern-search-bar:hover, .modern-search-bar:focus-within {
-        box-shadow: 0 15px 50px rgba(79, 182, 199, 0.15); /* Glow tosca saat hover */
+        box-shadow: 0 15px 50px rgba(79, 182, 199, 0.15); 
         border-color: #4FB6C7;
         transform: translateY(-2px);
     }
 
-    /* Group Input (Kiri & Kanan) */
     .search-group {
         display: flex;
         align-items: center;
@@ -133,7 +132,7 @@
 
     .icon-box {
         font-size: 1.2rem;
-        color: #4FB6C7; /* Warna Ikon Tosca */
+        color: #4FB6C7;
         margin-right: 15px;
         display: flex;
         align-items: center;
@@ -165,9 +164,8 @@
         padding: 0;
     }
     
-    /* Styling khusus date picker agar ikon bawaan hilang/rapi */
     input[type="date"]::-webkit-calendar-picker-indicator {
-        opacity: 0; /* Sembunyikan ikon bawaan jelek, kita pakai ikon FontAwesome di kiri */
+        opacity: 0; 
         position: absolute;
         left: 0;
         top: 0;
@@ -176,15 +174,12 @@
         cursor: pointer;
     }
 
-    /* Garis Pemisah Vertikal */
     .search-divider {
         width: 1px;
         height: 40px;
         background-color: #e0e0e0;
         margin: 0 5px;
     }
-
-    /* Tombol Cari Bulat Besar */
     .search-submit-btn {
         background: #4FB6C7;
         color: white;

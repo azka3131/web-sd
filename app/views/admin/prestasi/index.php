@@ -14,20 +14,16 @@ if(!isset($_SESSION)) session_start();
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9; /* Background abu muda seperti contoh */
+            background-color: #f4f6f9;
             color: #333;
             margin: 0;
-            padding: 30px 20px; /* Padding atas-bawah 30, kiri-kanan 20 */
+            padding: 30px 20px; 
         }
-
-        /* REVISI UKURAN DI SINI */
         .container-admin {
-            max-width: 1200px; /* Lebar pas (mirip contoh Kelola Berita) */
-            width: 95%;        /* Responsif di layar kecil */
-            margin: 0 auto;    /* Posisi Tengah */
+            max-width: 1200px; 
+            width: 95%;        
+            margin: 0 auto;    
         }
-
-        /* HEADER */
         .page-header {
             display: flex;
             justify-content: space-between;
@@ -36,7 +32,7 @@ if(!isset($_SESSION)) session_start();
         }
 
         .page-title h2 {
-            font-size: 26px; /* Judul sedikit lebih besar */
+            font-size: 26px; 
             color: #2c3e50;
             margin: 0 0 5px 0;
             font-weight: 700;
@@ -44,17 +40,17 @@ if(!isset($_SESSION)) session_start();
 
         .back-link {
             text-decoration: none;
-            color: #4FB6C7; /* Warna Teal sesuai contoh */
+            color: #4FB6C7; 
             font-size: 14px;
             font-weight: 600;
         }
         .back-link:hover { text-decoration: underline; }
 
         .btn-add {
-            background-color: #4FB6C7; /* Warna Teal tombol tambah */
+            background-color: #4FB6C7; 
             color: white;
             padding: 12px 25px;
-            border-radius: 50px; /* Tombol bulat seperti contoh */
+            border-radius: 50px; 
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
@@ -69,17 +65,15 @@ if(!isset($_SESSION)) session_start();
             transform: translateY(-2px);
         }
 
-        /* CARD PUTIH */
         .card-container {
             background: white;
-            border-radius: 15px; /* Sudut lebih membulat */
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03); /* Shadow halus */
+            border-radius: 15px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03); 
             overflow: hidden;
-            padding: 10px; /* Padding tipis di dalam card */
+            padding: 10px;
             width: 100%; 
         }
 
-        /* TABLE */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -101,14 +95,12 @@ if(!isset($_SESSION)) session_start();
         td {
             padding: 20px;
             vertical-align: middle;
-            border-bottom: 1px solid #fcfcfc; /* Garis sangat halus */
+            border-bottom: 1px solid #fcfcfc; 
             font-size: 14px;
             color: #444;
         }
 
         tr:hover td { background-color: #fcfcfc; }
-
-        /* GAMBAR */
         .thumb-img {
             width: 80px; height: 60px;
             object-fit: cover;
@@ -121,11 +113,9 @@ if(!isset($_SESSION)) session_start();
             display: flex; align-items: center; justify-content: center;
             color: #ccc; font-size: 10px;
         }
-
-        /* LABEL/BADGE */
         .badge {
             padding: 4px 10px;
-            border-radius: 6px; /* Kotak rounded */
+            border-radius: 6px; 
             font-size: 11px;
             font-weight: 600;
             display: inline-block;
@@ -136,8 +126,6 @@ if(!isset($_SESSION)) session_start();
             padding: 4px 10px; border-radius: 4px; 
             font-size: 11px; font-weight: 600;
         }
-
-        /* TOMBOL AKSI */
         .action-btn {
             display: inline-flex; align-items: center; justify-content: center;
             padding: 6px 12px;

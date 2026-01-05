@@ -1,10 +1,8 @@
 <?php
-// [FIX] Cek session dulu biar gak error
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Cek jika belum login, tendang ke halaman login
 if (!isset($_SESSION['admin'])) {
     header("Location: " . BASEURL . "/admin/login"); // <-- FIX DI SINI
     exit;
@@ -21,7 +19,6 @@ if (!isset($_SESSION['admin'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* RESET & BODY */
         * {
             margin: 0;
             padding: 0;
@@ -34,8 +31,6 @@ if (!isset($_SESSION['admin'])) {
             color: #333;
             padding: 40px;
         }
-
-        /* HEADER */
         .dashboard-header {
             display: flex;
             justify-content: space-between;
@@ -61,8 +56,6 @@ if (!isset($_SESSION['admin'])) {
         .welcome-text b {
             color: #4FB6C7;
         }
-
-        /* TOMBOL LOGOUT */
         .btn-logout {
             background-color: #ff6b6b;
             color: white;
@@ -83,16 +76,12 @@ if (!isset($_SESSION['admin'])) {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
         }
-
-        /* GRID MENU */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             /* Responsif */
             gap: 25px;
         }
-
-        /* KARTU MENU */
         .menu-card {
             background: white;
             padding: 30px;
@@ -185,8 +174,6 @@ if (!isset($_SESSION['admin'])) {
             font-size: 12px;
             color: #aaa;
         }
-
-        /* [BARU] Style untuk Toast Notification (Pesan Melayang) */
         #toast-box {
             visibility: hidden;
             min-width: 300px;
@@ -207,13 +194,10 @@ if (!isset($_SESSION['admin'])) {
             opacity: 0;
             transition: opacity 0.5s, bottom 0.5s;
         }
-
-        /* Class untuk memunculkan toast */
         #toast-box.show {
             visibility: visible;
             opacity: 1;
             bottom: 50px;
-            /* Efek naik sedikit */
         }
     </style>
 </head>

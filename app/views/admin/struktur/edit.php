@@ -76,12 +76,10 @@
             margin-top: 5px;
             display: block;
         }
-
-        /* Tombol Simpan (Teal) */
         .btn-submit {
             width: 100%;
             padding: 14px;
-            background-color: #46b5c1; /* Warna Teal */
+            background-color: #46b5c1; 
             color: white;
             border: none;
             border-radius: 50px;
@@ -108,8 +106,6 @@
         .btn-cancel:hover {
             color: #555;
         }
-        
-        /* Preview Image kecil jika diperlukan */
         .img-preview {
             margin-top: 10px;
             max-width: 100px;

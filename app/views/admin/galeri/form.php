@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* SAMA DENGAN STYLE FORM BERITA AGAR KONSISTEN */
         body {
             background-color: #f0f2f5;
             font-family: 'Poppins', sans-serif;

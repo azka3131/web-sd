@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* GLOBAL STYLE */
+        
         body {
             background-color: #f0f2f5;
             font-family: 'Poppins', sans-serif;
@@ -20,18 +20,18 @@
             padding: 20px;
         }
 
-        /* KOTAK FORM UTAMA */
+        
         .form-container {
             background: white;
-            padding: 40px 50px; /* Padding dalam diperbesar */
+            padding: 40px 50px;
             border-radius: 16px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             width: 100%;
-            max-width: 900px; /* Lebar maksimal diperbesar agar tidak kekecilan */
+            max-width: 900px; 
             position: relative;
         }
 
-        /* JUDUL */
+        
         .form-header {
             margin-bottom: 30px;
             border-bottom: 2px solid #f0f0f0;
@@ -54,7 +54,6 @@
         }
         .close-btn:hover { color: #e74c3c; transform: rotate(90deg); }
 
-        /* INPUT GROUPS */
         .form-group { margin-bottom: 25px; }
         
         label {
@@ -65,12 +64,12 @@
             font-size: 14px;
         }
 
-        /* STYLE INPUT TEXT & TEXTAREA */
+        
         input[type="text"], 
         input[type="date"], 
         textarea {
             width: 100%;
-            padding: 14px 18px; /* Input lebih tinggi & lega */
+            padding: 14px 18px; 
             border: 1px solid #e0e0e0;
             border-radius: 10px;
             font-size: 15px;
@@ -83,11 +82,10 @@
         input:focus, textarea:focus {
             background-color: #fff;
             border-color: #4FB6C7;
-            box-shadow: 0 0 0 4px rgba(79, 182, 199, 0.15); /* Efek glowing saat diklik */
+            box-shadow: 0 0 0 4px rgba(79, 182, 199, 0.15); 
             outline: none;
         }
 
-        /* CUSTOM FILE UPLOAD */
         .file-upload-box {
             border: 2px dashed #ddd;
             padding: 30px;

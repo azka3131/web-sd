@@ -6,11 +6,9 @@
     <title>Login Administrator - SDN Dukuhbenda 02</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* RESET & BODY */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
         body {
-            /* Background Gradient Elegan */
             background: linear-gradient(135deg, #4FB6C7 0%, #0057b3 100%);
             height: 100vh;
             display: flex;
@@ -18,8 +16,6 @@
             align-items: center;
             padding: 20px;
         }
-
-        /* KARTU LOGIN */
         .login-box {
             background: #ffffff;
             width: 100%;
@@ -31,8 +27,6 @@
             position: relative;
             animation: fadeInUp 0.8s ease-out;
         }
-
-        /* LOGO SEKOLAH */
         .login-logo {
             width: 90px;
             height: 90px;
@@ -40,16 +34,12 @@
             border-radius: 50%;
             border: 4px solid #fff;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-top: -85px; /* Agar logo "nongol" di atas kartu */
+            margin-top: -85px; 
             margin-bottom: 20px;
             background: white;
         }
-
-        /* JUDUL */
         h2 { color: #333; margin-bottom: 5px; font-weight: 800; font-size: 24px; }
         p.subtitle { color: #666; font-size: 14px; margin-bottom: 30px; }
-
-        /* INPUT FIELD */
         .input-group {
             position: relative;
             margin-bottom: 20px;
@@ -80,7 +70,7 @@
 
         .input-wrapper input {
             width: 100%;
-            padding: 12px 15px 12px 45px; /* Padding kiri besar untuk ikon */
+            padding: 12px 15px 12px 45px; 
             border: 2px solid #eee;
             border-radius: 30px;
             outline: none;
@@ -88,16 +78,12 @@
             transition: 0.3s;
             background: #f9fbfd;
         }
-
-        /* Efek Fokus Input */
         .input-wrapper input:focus {
             border-color: #4FB6C7;
             background: #fff;
             box-shadow: 0 0 10px rgba(79, 182, 199, 0.1);
         }
         .input-wrapper input:focus + i { color: #4FB6C7; }
-
-        /* TOMBOL LOGIN */
         .btn-login {
             width: 100%;
             padding: 12px;
@@ -117,8 +103,6 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(79, 182, 199, 0.4);
         }
-
-        /* LINK KEMBALI */
         .back-home {
             display: block;
             margin-top: 20px;
@@ -128,8 +112,6 @@
             transition: 0.3s;
         }
         .back-home:hover { color: #4FB6C7; }
-
-        /* ANIMASI */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }

@@ -1,7 +1,6 @@
 <?php include '../app/views/header.php'; ?>
 
 <?php
-// [FIX] Pengecekan agar fungsi tidak dideklarasikan ulang (Anti-Error)
 if (!function_exists('getFoto')) {
     function getFoto($data) {
         if (isset($data['foto']) && !empty($data['foto'])) {

@@ -18,7 +18,6 @@
             min-height: 100vh;
         }
 
-        /* Form Container (Card) */
         .form-card {
             background: white;
             width: 100%;
@@ -68,8 +67,6 @@
         }
 
         textarea.form-control { resize: vertical; min-height: 100px; }
-
-        /* Current Image Preview */
         .current-img-box {
             display: flex;
             align-items: center;
@@ -88,11 +85,10 @@
         }
         .current-img-info { font-size: 13px; color: #666; }
 
-        /* Buttons */
         .btn-submit {
             width: 100%;
             padding: 14px;
-            background-color: #f0ad4e; /* Warna Orange untuk Edit */
+            background-color: #f0ad4e; 
             color: white;
             border: none;
             border-radius: 50px;

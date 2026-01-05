@@ -6,7 +6,6 @@
     <title>Kelola Fasilitas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* STYLE STANDARD (SAMA DENGAN BERITA & GALERI) */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f4f6f9; color: #333; padding: 40px 20px; }
         .container { max-width: 1100px; margin: 0 auto; }

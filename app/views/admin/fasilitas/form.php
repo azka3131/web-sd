@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* STYLE GLOBAL (Sama untuk semua form) */
         body { background-color: #f0f2f5; font-family: 'Poppins', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
         .form-container { background: white; padding: 40px 50px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); width: 100%; max-width: 800px; }
         .form-header { margin-bottom: 30px; border-bottom: 2px solid #f0f0f0; padding-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }

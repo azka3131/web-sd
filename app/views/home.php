@@ -4,7 +4,6 @@
     <main>
 
 <?php
-// Cek data kepsek
 if (isset($kepsek) && !empty($kepsek)) {
     if (!empty($kepsek['foto'])) {
         $foto_kepsek = "/kp-sd2-dukuhbenda/public/assets/img/guru/" . $kepsek['foto'];
@@ -330,7 +329,6 @@ if (isset($kepsek) && !empty($kepsek)) {
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Slider
         const slides = document.querySelectorAll('.slide-item');
         let currentSlide = 0;
         const slideInterval = 3000;
@@ -343,7 +341,6 @@ if (isset($kepsek) && !empty($kepsek)) {
         }
         if (slides.length > 0) setInterval(nextSlide, slideInterval);
 
-        // Scroll Reveal
         const reveals = document.querySelectorAll('.reveal');
         const windowHeight = window.innerHeight;
         function checkReveal() {
@@ -358,7 +355,6 @@ if (isset($kepsek) && !empty($kepsek)) {
         window.addEventListener('scroll', checkReveal);
         checkReveal();
 
-        // Counter Animation
         const counters = document.querySelectorAll('.stat-number');
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
@@ -374,8 +370,6 @@ if (isset($kepsek) && !empty($kepsek)) {
             };
             updateCount();
         });
-
-        // Form Alert
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('pesan') === 'sukses') {
             alert("✅ Pesan berhasil dikirim!\nTerima kasih telah menghubungi kami.");

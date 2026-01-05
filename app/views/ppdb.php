@@ -28,14 +28,13 @@
 </div>
 
 <style>
-    /* 1. Wrapper / Kartu Putih di Tengah */
     .ppdb-wrapper {
         background: #ffffff;
-        max-width: 900px;       /* Batas lebar konten agar enak di mata */
-        margin: 40px auto;      /* Posisi tengah */
+        max-width: 900px;       
+        margin: 40px auto;      
         padding: 50px 30px;
         border-radius: 20px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* Bayangan halus */
+        box-shadow: 0 10px 40px rgba(0,0,0,0.05); 
         text-align: center;
         border: 1px solid #f0f0f0;
     }
@@ -62,26 +61,25 @@
         border-radius: 2px;
     }
 
-    /* 3. Style Gambar Brosur (Agar Tidak Kebesaran) */
+
     .poster-container {
         margin-bottom: 40px;
     }
 
     .ppdb-poster {
-        width: 100%;            /* Responsif di HP */
-        max-width: 600px;       /* BATAS MAKSIMAL LEBAR (Biar ga menuhin layar) */
-        height: auto;           /* Tinggi otomatis (proporsional) */
-        border-radius: 15px;    /* Sudut melengkung */
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Efek timbul */
+        width: 100%;           
+        max-width: 600px;      
+        height: auto;           
+        border-radius: 15px;    
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
         transition: transform 0.3s ease;
         border: 1px solid #eee;
     }
 
     .ppdb-poster:hover {
-        transform: scale(1.02); /* Efek zoom dikit saat di-hover */
+        transform: scale(1.02); 
     }
 
-    /* 4. State Kosong (Jika tidak ada gambar) */
     .empty-state {
         padding: 40px;
         background: #f8f9fa;
@@ -95,7 +93,7 @@
         color: #ccc;
     }
 
-    /* 5. Tombol WhatsApp Spesial PPDB */
+    
     .ppdb-action-area p {
         margin-bottom: 15px;
         color: #555;
@@ -137,7 +135,7 @@
             font-size: 1.5rem;
         }
         .btn-wa-ppdb {
-            width: 100%; /* Tombol full width di HP */
+            width: 100%;
         }
     }
 </style>

@@ -5,7 +5,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9; /* Background abu-abu muda */
+            background-color: #f4f6f9; 
             margin: 0;
             padding: 0;
             display: flex;
@@ -23,8 +23,8 @@
         .card {
             background: white;
             padding: 40px;
-            border-radius: 15px; /* Sudut membulat */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Bayangan halus */
+            border-radius: 15px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
         }
 
         h2 {
@@ -56,7 +56,7 @@
             border: 1px solid #e1e1e1;
             border-radius: 8px;
             font-size: 14px;
-            box-sizing: border-box; /* Agar padding tidak merusak lebar */
+            box-sizing: border-box;
             transition: all 0.3s;
         }
 
@@ -72,7 +72,6 @@
             height: 100px;
         }
 
-        /* Styling Input File agar lebih rapi (Opsional, menyesuaikan browser) */
         input[type="file"] {
             padding: 10px;
             background: #fafafa;
@@ -81,10 +80,10 @@
         .btn-submit {
             width: 100%;
             padding: 14px;
-            background-color: #46b5c1; /* Warna Teal sesuai gambar Guru */
+            background-color: #46b5c1;
             color: white;
             border: none;
-            border-radius: 50px; /* Membuat tombol lonjong/pill */
+            border-radius: 50px; 
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
